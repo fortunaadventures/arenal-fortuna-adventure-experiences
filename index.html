@@ -24,7 +24,29 @@
     section{padding:76px 0}.section-head{max-width:680px;margin-bottom:30px}.section-head h2{font-size:clamp(30px,4vw,44px);line-height:1.1;margin:8px 0 12px;color:var(--forest);letter-spacing:-.03em}.section-head p{color:var(--muted);margin:0}
     .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.tour-card{background:white;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(23,61,50,.06)}
     .
-.tour-photo{height:260px;background-size:cover;background-position:center;background-repeat:no-repeat}.rafting-photo{background-image:url('https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&q=85')}
+.tour-photo {
+  width: 100%;
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #eaf0e7;
+  display: block;
+}
+
+.tour-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e1e5de;
+  box-shadow: 0 10px 30px rgba(23, 61, 50, 0.08);
+}
+
+@media (max-width: 760px) {
+  .tour-photo {
+    height: 230px;
+  }
+}:center;background-repeat:no-repeat}.rafting-photo{background-image:url('https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&q=85')}
     .atv-photo{background-image:url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=85')}
     .tour-body{padding:24px}.tour-top{display:flex;justify-content:space-between;align-items:start;gap:12px}.tag{font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#edf4e5;color:var(--forest);font-weight:800;padding:7px 9px;border-radius:99px}
     .tour-body h3{font-size:27px;margin:12px 0 8px;color:var(--forest)}.tour-body p{color:var(--muted);margin:0 0 16px}.price{font-size:25px;font-weight:900;color:var(--forest);margin:12px 0 18px}.price small{font-size:12px;font-weight:600;color:var(--muted)}
