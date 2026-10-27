@@ -983,74 +983,82 @@
   Please note: Your inquiry is not a confirmed booking. Your reservation will only be confirmed after availability and booking details have been verified by the provider.
 </p> 
 
-        <form class="booking-form" id="bookingForm">
-          <div class="form-grid">
-            <div class="field">
-              <label for="name" data-en="Full name *" data-es="Nombre completo *">Full name *</label>
-              <input id="name" name="name" type="text" autocomplete="name" required
-                     data-placeholder-en="Your name" data-placeholder-es="Tu nombre"
-                     placeholder="Your name">
-            </div>
+     
+<form class="booking-form" id="bookingForm">
+  <div class="form-grid">
 
-            <div class="field">
-              <label for="email" data-en="Email *" data-es="Correo electrónico *">Email *</label>
-              <input id="email" name="email" type="email" autocomplete="email" required
-                     data-placeholder-en="you@example.com" data-placeholder-es="tu@ejemplo.com"
-                     placeholder="you@example.com">
-            </div>
+    <div class="field">
+      <label for="name" data-en="Full Name *" data-es="Nombre completo *">Full Name *</label>
+      <input id="name" name="name" type="text" autocomplete="name" required
+             data-placeholder-en="Enter your full name"
+             data-placeholder-es="Escribe tu nombre completo"
+             placeholder="Enter your full name">
+    </div>
 
-            <div class="field full">
-              <label for="activity" data-en="Preferred experience *" data-es="Experiencia preferida *">Preferred experience *</label>
-              <select id="activity" name="activity" required>
-                <option value="" data-en="Choose an experience" data-es="Elige una experiencia">Choose an experience</option>
-                <option value="Balsa River Rafting — Class II & III" data-en="Balsa River Rafting — Class II & III" data-es="Rafting en el río Balsa — Clase II y III">Balsa River Rafting — Class II & III</option>
-                <option value="Sarapiquí River Rafting — Class III" data-en="Sarapiquí River Rafting — Class III" data-es="Rafting en el río Sarapiquí — Clase III">Sarapiquí River Rafting — Class III</option>
-                <option value="Sarapiquí River Rafting — Class III & IV" data-en="Sarapiquí River Rafting — Class III & IV" data-es="Rafting en el río Sarapiquí — Clase III y IV">Sarapiquí River Rafting — Class III & IV</option>
-                <option value="Balsa River Adrenaline Experience" data-en="Balsa River Adrenaline Experience" data-es="Experiencia de adrenalina en el río Balsa">Balsa River Adrenaline Experience</option>
-                <option value="Jet Ski Adventure" data-en="Jet Ski Adventure" data-es="Aventura en Jet Ski">Jet Ski Adventure</option>
-                <option value="Jungle and Maleku ATV Adventure" data-en="Jungle and Maleku ATV Adventure" data-es="Aventura en ATV por la selva y Maleku">Jungle and Maleku ATV Adventure</option>
-                <option value="Side-by-Side Adventure" data-en="Side-by-Side Adventure" data-es="Aventura en Side-by-Side">Side-by-Side Adventure</option>
-                <option value="Other activity" data-en="Other activity" data-es="Otra actividad">Other activity</option>
-              </select>
-            </div>
+    <div class="field">
+      <label for="email" data-en="Email Address *" data-es="Correo electrónico *">Email Address *</label>
+      <input id="email" name="email" type="email" autocomplete="email" required
+             data-placeholder-en="you@example.com"
+             data-placeholder-es="tu@ejemplo.com"
+             placeholder="you@example.com">
+    </div>
 
-            <div class="field">
-              <label for="date" data-en="Preferred date *" data-es="Fecha preferida *">Preferred date *</label>
-              <input id="date" name="date" type="date" required>
-            </div>
+    <div class="field full">
+      <label for="activity" data-en="Which Experience Are You Interested In? *" data-es="¿Qué experiencia te interesa? *">Which Experience Are You Interested In? *</label>
+      <select id="activity" name="activity" required>
+        <option value="" data-en="Select an experience" data-es="Selecciona una experiencia">Select an experience</option>
+        <option value="Balsa River Rafting — Class II & III" data-en="Balsa River Rafting — Class II & III" data-es="Rafting en el río Balsa — Clase II y III">Balsa River Rafting — Class II & III</option>
+        <option value="Sarapiquí River Rafting — Class III" data-en="Sarapiquí River Rafting — Class III" data-es="Rafting en el río Sarapiquí — Clase III">Sarapiquí River Rafting — Class III</option>
+        <option value="Sarapiquí River Rafting — Class III & IV" data-en="Sarapiquí River Rafting — Class III & IV" data-es="Rafting en el río Sarapiquí — Clase III y IV">Sarapiquí River Rafting — Class III & IV</option>
+        <option value="Balsa River Adrenaline Experience" data-en="Balsa River Adrenaline Experience" data-es="Experiencia de adrenalina en el río Balsa">Balsa River Adrenaline Experience</option>
+        <option value="Jet Ski Adventure" data-en="Jet Ski Adventure" data-es="Aventura en Jet Ski">Jet Ski Adventure</option>
+        <option value="Jungle and Maleku ATV Adventure" data-en="Jungle and Maleku ATV Adventure" data-es="Aventura en ATV por la selva y Maleku">Jungle and Maleku ATV Adventure</option>
+        <option value="Side-by-Side Adventure" data-en="Side-by-Side Adventure" data-es="Aventura en Side-by-Side">Side-by-Side Adventure</option>
+        <option value="Other activity" data-en="Other Activity" data-es="Otra actividad">Other Activity</option>
+      </select>
+    </div>
 
-            <div class="field">
-              <label for="people" data-en="Number of people *" data-es="Número de personas *">Number of people *</label>
-              <input id="people" name="people" type="number" min="1" max="100" required
-                     data-placeholder-en="e.g. 4" data-placeholder-es="Ej. 4"
-                     placeholder="e.g. 4">
-            </div>
+    <div class="field">
+      <label for="date" data-en="Preferred Date *" data-es="Fecha deseada *">Preferred Date *</label>
+      <input id="date" name="date" type="date" required>
+    </div>
 
-            <div class="field full">
-              <label for="language" data-en="Preferred language" data-es="Idioma preferido">Preferred language</label>
-              <select id="language" name="language">
-                <option value="English" data-en="English" data-es="Inglés">English</option>
-                <option value="Spanish" data-en="Spanish" data-es="Español">Spanish</option>
-              </select>
-            </div>
+    <div class="field">
+      <label for="people" data-en="Number of Guests *" data-es="Número de personas *">Number of Guests *</label>
+      <input id="people" name="people" type="number" min="1" max="100" required
+             data-placeholder-en="e.g. 4 guests"
+             data-placeholder-es="Ej. 4 personas"
+             placeholder="e.g. 4 guests">
+    </div>
 
-            <div class="field full">
-              <label for="message" data-en="Additional details" data-es="Detalles adicionales">Additional details</label>
-              <textarea id="message" name="message"
-                        data-placeholder-en="Hotel, ages of children, questions or other details..."
-                        data-placeholder-es="Hotel, edades de los niños, preguntas u otros detalles..."
-                        placeholder="Hotel, ages of children, questions or other details..."></textarea>
-            </div>
-          </div>
+    <div class="field full">
+      <label for="language" data-en="Language of Communication" data-es="Idioma de comunicación">Language of Communication</label>
+      <select id="language" name="language">
+        <option value="English" data-en="English" data-es="Inglés">English</option>
+        <option value="Spanish" data-en="Spanish" data-es="Español">Spanish</option>
+      </select>
+    </div>
 
-          <button class="btn" type="submit"
-                  data-en="Continue to WhatsApp"
-                  data-es="Continuar a WhatsApp">Continue to WhatsApp</button>
+    <div class="field full">
+      <label for="message" data-en="Additional Information (Optional)" data-es="Información adicional (opcional)">Additional Information (Optional)</label>
+      <textarea id="message" name="message"
+                data-placeholder-en="Hotel, children's ages, questions or special requests..."
+                data-placeholder-es="Hotel, edades de los niños, preguntas o solicitudes especiales..."
+                placeholder="Hotel, children's ages, questions or special requests..."></textarea>
+    </div>
 
-          <p class="form-note"
-             data-en="Submitting this form opens WhatsApp with your request. It does not automatically confirm a booking."
-             data-es="Al enviar este formulario, se abrirá WhatsApp con tu consulta. Esto no confirma automáticamente una reservación.">
-            Submitting this form opens WhatsApp with your request. It does not automatically confirm a booking.
+  </div>
+
+  <button class="btn" type="submit"
+          data-en="Send Inquiry via WhatsApp"
+          data-es="Enviar consulta por WhatsApp">Send Inquiry via WhatsApp</button>
+
+  <p class="form-note"
+     data-en="Your inquiry will open in WhatsApp. This does not confirm a booking. Your reservation is confirmed only after the provider verifies availability and booking details."
+     data-es="Tu consulta se abrirá en WhatsApp. Esto no confirma una reserva. Tu reservación quedará confirmada únicamente cuando el proveedor verifique la disponibilidad y los detalles de la reserva.">
+    Your inquiry will open in WhatsApp. This does not confirm a booking. Your reservation is confirmed only after the provider verifies availability and booking details.
+  </p>
+</form> 
           </p>
         </form>
       </div>
