@@ -2,194 +2,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover rafting, ATV, Jet Ski and Side-by-Side adventures around La Fortuna, Costa Rica.">
-  <meta name="theme-color" content="#123b2d">
-  <title>Arenal Fortuna Adventure Experiences | La Fortuna, Costa Rica</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Discover rafting and outdoor adventures in La Fortuna, Costa Rica.">
+<title>Arenal Fortuna Adventure Experiences | La Fortuna, Costa Rica</title>
 
-  <style>
-    :root {
-      --green: #123b2d;
-      --green-light: #1d6548;
-      --lime: #c8e36b;
-      --cream: #f7f5ed;
-      --white: #ffffff;
-      --text: #203129;
-      --muted: #637169;
-      --border: #e2e7df;
-      --shadow: 0 12px 32px rgba(20, 45, 32, .10);
-    }
+<style>
+:root {
+  --green: #123b2d;
+  --green-light: #1d6548;
+  --lime: #c8e36b;
+  --cream: #f7f5ed;
+  --white: #ffffff;
+  --text: #203129;
+  --muted: #637169;
+  --border: #e2e7df;
+  --shadow: 0 12px 32px rgba(20,45,32,.10);
+}
 
-    * {
-      box-sizing: border-box;
-    }
+* { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      line-height: 1.6;
-    }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    img {
-      display: block;
-      width: 100%;
-      object-fit: cover;
-    }
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
 
-    a {
-      color: inherit;
-    }
+a { color: inherit; }
 
-    button,
-    input,
-    select,
-    textarea {
-      font: inherit;
-    }
+.container {
+  width: min(1160px, calc(100% - 40px));
+  margin: auto;
+}
 
-    .container {
-      width: min(1160px, calc(100% - 40px));
-      margin: 0 auto;
-    }
+.topbar {
+  background: var(--green);
+  color: white;
+  padding: 9px;
+  text-align: center;
+  font-size: 13px;
+}
 
-    .topbar {
-      background: var(--green);
-      color: var(--white);
-      font-size: 13px;
-      padding: 9px 0;
-      text-align: center;
-    }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid var(--border);
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255, 255, 255, .97);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(10px);
-    }
+.nav {
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
 
-    .nav {
-      min-height: 76px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
+.brand {
+  color: var(--green);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+}
 
-    .brand {
-      color: var(--green);
-      font-size: 18px;
-      font-weight: 800;
-      line-height: 1.2;
-      text-decoration: none;
-      max-width: 280px;
-    }
+.brand span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  color: var(--green-light);
+}
 
-    .brand span {
-      display: block;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-top: 5px;
-      color: var(--green-light);
-    }
+.nav-right,
+.nav-links,
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
 
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+.nav-links a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+.language-switch { gap: 5px; }
 
-    .nav-links a {
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .language-switch {
-      display: flex;
-      gap: 5px;
-    }
-
-    .language-switch button {
-      border: 1px solid var(--border);
-      background: white;
-      border-radius: 7px;
-      padding: 7px 10px;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 12px;
-  }
+.language-switch button {
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 7px;
+  padding: 7px 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+}
 
 .language-switch button.active {
   background: var(--green);
   color: white;
-  border-color: var(--green);
-} 
+}
+
 .hero {
   background:
-    linear-gradient(
-      90deg,
-      rgba(8, 31, 22, .55),
-      rgba(8, 31, 22, .10)
-    ),
-    url("./arenal-adventure-hero.png.png")
-    center 40% / cover no-repeat;
+    linear-gradient(90deg, rgba(8,31,22,.72), rgba(8,31,22,.18)),
+    url("./arenal-adventure-hero.png.png") center 40% / cover no-repeat;
   color: white;
   padding: 100px 0 105px;
 }
 
-}
-
-
-.hero-content {
-  max-width: 740px;
-  position: relative;
-  z-index: 1;
-}
+.hero-content { max-width: 800px; }
 
 .eyebrow {
   color: var(--lime);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 2px;
-  line-height: 1.5;
   text-transform: uppercase;
   margin-bottom: 14px;
 }
-      
- 
+
 .hero h1 {
-  max-width: 850px;
   font-size: clamp(38px, 6vw, 66px);
   line-height: 1.08;
   letter-spacing: -1.5px;
   margin: 16px 0 22px;
-  color: #ffffff;
-  text-wrap: balance;
 }
 
 .hero p {
-  max-width: 620px;
+  max-width: 650px;
   font-size: 18px;
   line-height: 1.7;
   color: #f1f4ef;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hero-buttons {
@@ -197,1177 +158,861 @@
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 30px;
-} 
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      border: 0;
-      border-radius: 8px;
-      padding: 13px 20px;
-      background: var(--lime);
-      color: var(--green);
-      font-weight: 800;
-      text-decoration: none;
-      cursor: pointer;
-      transition: transform .2s, opacity .2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: .93;
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: white;
-      border: 1px solid rgba(255,255,255,.75);
-    }
-
-    .trust-strip {
-      background: white;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .trust-items {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      padding: 23px 0;
-      text-align: center;
-    }
-
-    .trust-items strong {
-      display: block;
-      color: var(--green);
-      font-size: 15px;
-    }
-
-    .trust-items span {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    section {
-      padding: 76px 0;
-    }
-
-    .section-heading {
-      max-width: 740px;
-      margin: 0 auto 38px;
-      text-align: center;
-    }
-
-    .section-heading .eyebrow {
-      color: var(--green-light);
-    }
-
-    h2 {
-      color: var(--green);
-      font-size: clamp(29px, 4vw, 42px);
-      line-height: 1.15;
-      letter-spacing: -.7px;
-      margin: 12px 0;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .tour-card {
-      overflow: hidden;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-    }
-
-    .tour-card img {
-      height: 260px;
-      background: #dce4db;
-    }
-
-    .tour-content {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      flex: 1;
-    }
-
-    .tour-tag {
-      display: inline-block;
-      background: #edf4dc;
-      color: var(--green);
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 5px 9px;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-
-    .tour-card h3 {
-      color: var(--green);
-      font-size: 23px;
-      line-height: 1.25;
-      margin: 0 0 10px;
-    }
-
-    .tour-card p {
-      color: var(--muted);
-      margin: 0 0 18px;
-    }
-
-    .tour-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 15px;
-      font-size: 13px;
-      margin-bottom: 18px;
-    }
-
-    .tour-price {
-      color: var(--green);
-      font-size: 24px;
-      font-weight: 800;
-      margin-top: auto;
-      margin-bottom: 16px;
-    }
-
-    .tour-price small {
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 400;
-    }
-
-    .tour-content .btn {
-      width: 100%;
-    }
-
-    .note {
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 22px;
-      text-align: center;
-    }
-
-    .about {
-      background: white;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .about-image {
-      width: 100%;
-      height: 420px;
-      border-radius: 16px;
-      object-fit: cover;
-    }
-
-    .about-copy p {
-      color: var(--muted);
-    }
-
-    .feature-list {
-      list-style: none;
-      padding: 0;
-      margin: 24px 0;
-    }
-
-    .feature-list li {
-      padding: 10px 0 10px 28px;
-      position: relative;
-    }
-
-    .feature-list li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--green-light);
-      font-weight: 900;
-    }
-
-    .booking-section {
-      background: #edf1e8;
-    }
-
-    .booking-grid {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 45px;
-      align-items: start;
-    }
-
-    .booking-copy p {
-      color: var(--muted);
-    }
-
-    .contact-details {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
-      margin-top: 24px;
-    }
-
-    .contact-details p {
-      margin: 6px 0;
-    }
-
-    .booking-form {
-      background: white;
-      border: 1px solid var(--border);
-      padding: 28px;
-      border-radius: 15px;
-      box-shadow: var(--shadow);
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 17px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      min-width: 0;
-    }
-
-    .field.full {
-      grid-column: 1 / -1;
-    }
-
-    .field label {
-      color: var(--green);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .field input,
-    .field select,
-    .field textarea {
-      width: 100%;
-      min-width: 0;
-      padding: 12px;
-      border: 1px solid #d5ddd5;
-      border-radius: 7px;
-      background: white;
-      color: var(--text);
-    }
-
-    .field textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    .booking-form .btn {
-      width: 100%;
-      margin-top: 20px;
-    }
-
-    .form-note {
-      color: var(--muted);
-      font-size: 12px;
-      margin: 13px 0 0;
-    }
-
-    .faq-list {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    details {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      padding: 18px 20px;
-      margin-bottom: 12px;
-    }
-
-    summary {
-      color: var(--green);
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    details p {
-      color: var(--muted);
-      margin-bottom: 0;
-    }
-
-    footer {
-      background: var(--green);
-      color: white;
-      padding: 38px 0;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    footer p {
-      margin: 5px 0;
-      color: #dbe6dc;
-      font-size: 13px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: white;
-      font-size: 13px;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 20;
-      border-radius: 50px;
-      padding: 14px 18px;
-      background: #176b42;
-      color: white;
-      font-size: 14px;
-      font-weight: 800;
-      text-decoration: none;
-      box-shadow: 0 6px 22px rgba(0,0,0,.2);
-    }
-
-    @media (max-width: 800px) {
-      .nav {
-        padding: 13px 0;
-        align-items: flex-start;
-      }
-
-      .nav-right {
-        align-items: flex-end;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .nav-links {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
-
-      .nav-links a {
-        font-size: 12px;
-      }
-
-      .hero {
-        padding: 75px 0;
-      }
-
-      .about-grid,
-      .booking-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-image {
-        height: 320px;
-      }
-
-      .cards {
-        gap: 16px;
-      }
-
-      .tour-card img {
-        height: 210px;
-      }
-
-      .tour-content {
-        padding: 18px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .container {
-        width: min(100% - 28px, 1160px);
-      }
-
-      .nav {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
-      }
-
-      .nav-right {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
-
-      .nav-links {
-        justify-content: flex-start;
-      }
-
-      .trust-items {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
-      section {
-        padding: 55px 0;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .tour-card img {
-        height: 235px;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .field.full {
-        grid-column: auto;
-      }
-
-      .booking-form {
-        padding: 20px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .whatsapp-float {
-        right: 12px;
-        bottom: 12px;
-        padding: 12px 15px;
-      }
-    }
-  </style>
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 0;
+  border-radius: 8px;
+  padding: 13px 20px;
+  background: var(--lime);
+  color: var(--green);
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn:hover {
+  opacity: .92;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.trust-strip {
+  background: white;
+  border-bottom: 1px solid var(--border);
+}
+
+.trust-items {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  padding: 23px 0;
+  text-align: center;
+}
+
+.trust-items strong {
+  display: block;
+  color: var(--green);
+}
+
+.trust-items span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+section.content-section { padding: 76px 0; }
+
+.section-heading {
+  max-width: 800px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.section-heading .eyebrow,
+.about-copy .eyebrow,
+.booking-copy .eyebrow {
+  color: var(--green-light);
+}
+
+h2 {
+  color: var(--green);
+  font-size: clamp(29px,4vw,42px);
+  line-height: 1.15;
+  margin: 12px 0;
+}
+
+h3 {
+  color: var(--green);
+  line-height: 1.25;
+}
+
+.section-heading p,
+.about-copy p,
+.booking-copy p {
+  color: var(--muted);
+}
+
+/* ABOUT SECTION */
+
+.about { background: white; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-image {
+  width: 100%;
+  height: 420px;
+  border-radius: 16px;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+}
+
+.feature-list li {
+  padding: 10px 0 10px 28px;
+  position: relative;
+}
+
+.feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--green-light);
+  font-weight: 900;
+}
+
+/* TOUR CARDS */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 24px;
+}
+
+.tour-card {
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tour-card img {
+  width: 100%;
+  height: 260px;
+  background: #dce4db;
+}
+
+.tour-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.tour-tag {
+  display: inline-block;
+  background: #edf4dc;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 9px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.tour-card h3 {
+  font-size: 23px;
+  margin: 0 0 10px;
+}
+
+.tour-card p {
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+.tour-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 15px;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.tour-price {
+  color: var(--green);
+  font-size: 24px;
+  font-weight: 800;
+  margin-top: auto;
+  margin-bottom: 16px;
+}
+
+.tour-price small {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.tour-content .btn { width: 100%; }
+
+.note {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 22px;
+  text-align: center;
+}
+
+/* CONTACT FORM */
+
+.booking-section { background: #edf1e8; }
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 45px;
+  align-items: start;
+}
+
+.contact-details,
+.booking-form {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 24px;
+  margin-top: 20px;
+}
+
+.booking-form {
+  box-shadow: var(--shadow);
+  margin-top: 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.field.full { grid-column: 1 / -1; }
+
+.field label {
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #d5ddd5;
+  border-radius: 7px;
+  background: white;
+  color: var(--text);
+}
+
+.field textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.booking-form .btn {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.form-note {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* FAQ */
+
+.faq-list {
+  max-width: 850px;
+  margin: auto;
+}
+
+details {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 18px 20px;
+  margin-bottom: 12px;
+}
+
+summary {
+  color: var(--green);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+details p { color: var(--muted); }
+
+/* CANCELLATION POLICY */
+
+.policy-content {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+}
+
+.policy-content h3 { margin-top: 28px; }
+.policy-content h3:first-child { margin-top: 0; }
+.policy-content p,
+.policy-content li { color: var(--muted); }
+.policy-content li { margin-bottom: 8px; }
+
+/* FOOTER */
+
+footer {
+  background: var(--green);
+  color: white;
+  padding: 38px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+footer p {
+  margin: 5px 0;
+  color: #dbe6dc;
+  font-size: 13px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: white;
+  font-size: 13px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 20;
+  border-radius: 50px;
+  padding: 14px 18px;
+  background: #176b42;
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 6px 22px rgba(0,0,0,.2);
+}
+
+@media(max-width:800px) {
+  .nav { padding: 13px 0; align-items: flex-start; }
+  .nav-right { align-items: flex-end; flex-direction: column; gap: 10px; }
+  .nav-links { gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+  .nav-links a { font-size: 12px; }
+  .hero { padding: 75px 0; }
+  .about-grid,
+  .booking-grid { grid-template-columns: 1fr; }
+  .about-image { height: 320px; }
+  .cards { gap: 16px; }
+  .tour-card img { height: 210px; }
+  .tour-content { padding: 18px; }
+}
+
+@media(max-width:560px) {
+  .container { width: calc(100% - 28px); }
+  .nav { flex-direction: column; align-items: stretch; gap: 12px; }
+  .nav-right {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .nav-links { justify-content: flex-start; }
+  .trust-items,
+  .cards,
+  .form-grid { grid-template-columns: 1fr; }
+  .trust-items { gap: 12px; }
+  section.content-section { padding: 55px 0; }
+  .tour-card img { height: 235px; }
+  .field.full { grid-column: auto; }
+  .booking-form,
+  .policy-content { padding: 20px; }
+  .hero p { font-size: 16px; }
+  .whatsapp-float { right: 12px; bottom: 12px; padding: 12px 15px; }
+}
+</style>
 </head>
 
 <body>
-  <div class="topbar">
-    <span data-en="Adventure experiences in La Fortuna, Costa Rica"
-          data-es="Experiencias de aventura en La Fortuna, Costa Rica">
-      Adventure experiences in La Fortuna, Costa Rica
-    </span>
-  </div>
 
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#home">
-        ARENAL FORTUNA
-        <span>Adventure Experiences</span>
-      </a>
+<div class="topbar">
+  <span data-en="Adventure experiences in La Fortuna, Costa Rica"
+        data-es="Experiencias de aventura en La Fortuna, Costa Rica">
+    Adventure experiences in La Fortuna, Costa Rica
+  </span>
+</div>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">
+      ARENAL FORTUNA
+      <span>Adventure Experiences</span>
+    </a>
 
     <div class="nav-right">
-  <nav class="nav-links" aria-label="Main navigation">
-    <a href="#tours" data-en="Experiences" data-es="Experiencias">Experiences</a>
-    <a href="#about" data-en="About us" data-es="Nosotros">About us</a>
-  </nav>
-</div> 
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#tours" data-en="Experiences" data-es="Experiencias">Experiences</a>
+        <a href="#about" data-en="About us" data-es="Nosotros">About us</a>
+        <a href="#booking" data-en="Contact" data-es="Contacto">Contact</a>
+      </nav>
 
-        <div class="language-switch" aria-label="Language selector">
-          <button type="button" class="active" data-language="en" aria-pressed="true">EN</button>
-          <button type="button" data-language="es" aria-pressed="false">ES</button>
-        </div>
+      <div class="language-switch" aria-label="Language selector">
+        <button type="button" class="active" data-language="en">EN</button>
+        <button type="button" data-language="es">ES</button>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-content">
-        <div class="eyebrow"
-             data-en="Your next Costa Rican adventure"
-             data-es="Tu próxima aventura en Costa Rica">
-          Your next Costa Rican adventure
-        </div> 
-        
-<h1 data-en="Adventure Awaits in La Fortuna, Costa Rica"
-    data-es="La Aventura te Espera en La Fortuna, Costa Rica">
-  Adventure Awaits in La Fortuna, Costa Rica
-</h1>
+<main>
 
-<p data-en="Discover the thrill of white-water rafting, explore jungle trails on an ATV, ride across the water on a Jet Ski, and experience exciting off-road adventures surrounded by Costa Rica's spectacular landscapes. Your next adventure starts here."
-   data-es="Descubre la emoción del rafting en aguas rápidas, explora senderos de la selva en ATV, disfruta una aventura en Jet Ski y vive emocionantes recorridos todoterreno rodeado de los espectaculares paisajes de Costa Rica. Tu próxima aventura comienza aquí.">
-  Discover the thrill of white-water rafting, explore jungle trails on an ATV, ride across the water on a Jet Ski, and experience exciting off-road adventures surrounded by Costa Rica's spectacular landscapes. Your next adventure starts here.
-</p>
+<!-- HERO -->
 
-<div class="hero-buttons">
-  <a class="btn" href="#tours"
-     data-en="Explore Our Adventures"
-     data-es="Explora Nuestras Aventuras">
-    Explore Our Adventures
-  </a>
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <div class="eyebrow"
+         data-en="Your next Costa Rican adventure"
+         data-es="Tu próxima aventura en Costa Rica">
+      Your next Costa Rican adventure
+    </div>
 
-  <a class="btn" href="#bookingForm"
-     data-en="Plan Your Experience"
-     data-es="Planea tu Experiencia">
-    Plan Your Experience
-  </a>
+    <h1 data-en="Adventure Awaits in La Fortuna, Costa Rica"
+        data-es="La aventura te espera en La Fortuna, Costa Rica">
+      Adventure Awaits in La Fortuna, Costa Rica
+    </h1>
+
+    <p data-en="Discover the thrill of white-water rafting, explore jungle trails on an ATV, ride across the water on a Jet Ski, and experience exciting off-road adventures surrounded by Costa Rica's spectacular landscapes. Your next adventure starts here."
+       data-es="Descubre la emoción del rafting en aguas rápidas, explora senderos de la selva en ATV, disfruta una aventura en Jet Ski y vive emocionantes recorridos todoterreno rodeado de los espectaculares paisajes de Costa Rica. Tu próxima aventura comienza aquí.">
+      Discover the thrill of white-water rafting, explore jungle trails on an ATV, ride across the water on a Jet Ski, and experience exciting off-road adventures surrounded by Costa Rica's spectacular landscapes. Your next adventure starts here.
+    </p>
+
+    <div class="hero-buttons">
+      <a class="btn" href="#tours"
+         data-en="Explore Our Adventures"
+         data-es="Explora nuestras aventuras">Explore Our Adventures</a>
+
+      <a class="btn btn-outline" href="#booking"
+         data-en="Plan Your Experience"
+         data-es="Planea tu experiencia">Plan Your Experience</a>
+
+      <a class="btn" href="https://wa.me/50672500633"
+         target="_blank" rel="noopener noreferrer"
+         data-en="Contact Us on WhatsApp"
+         data-es="Contáctanos por WhatsApp">Contact Us on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="container trust-items">
+    <div>
+      <strong data-en="Rafting & River Adventures" data-es="Rafting y aventuras en el río">Rafting & River Adventures</strong>
+      <span data-en="Choose your river experience" data-es="Elige tu experiencia en el río">Choose your river experience</span>
+    </div>
+    <div>
+      <strong data-en="Outdoor Activities" data-es="Actividades al aire libre">Outdoor Activities</strong>
+      <span data-en="Explore La Fortuna your way" data-es="Explora La Fortuna a tu manera">Explore La Fortuna your way</span>
+    </div>
+    <div>
+      <strong data-en="Local Trip Assistance" data-es="Ayuda para planificar tu viaje">Local Trip Assistance</strong>
+      <span data-en="Ask about details and availability" data-es="Consulta detalles y disponibilidad">Ask about details and availability</span>
+    </div>
+  </div>
 </div>
 
-  
-  <a class="btn"
-     href="https://wa.me/+50672500633"
-     target="_blank"
-     rel="noopener noreferrer"
-     data-en="Contact Us on WhatsApp"
-     data-es="Contáctanos por WhatsApp">
-    Contact Us on WhatsApp
-  </a>
-</div>
+<!-- ABOUT US -->
 
-        </div>
-      </div>
-    </section>
+<section class="content-section about" id="about">
+  <div class="container about-grid">
 
-<section class="about-us" id="about">
-  <div class="container">
+    <img class="about-image"
+         src="./volcan-arenal.png.png"
+         alt="Arenal Volcano in Costa Rica"
+         loading="lazy">
 
-   <section class="about-us" id="about">
-  <div class="container">
-    <div class="section-heading">
+    <div class="about-copy">
+      <div class="eyebrow" data-en="GET TO KNOW US" data-es="CONÓCENOS">GET TO KNOW US</div>
 
-      <div class="eyebrow"
-           data-en="GET TO KNOW US"
-           data-es="CONÓCENOS">
-        GET TO KNOW US
-      </div> 
-
-      <h2
-        data-en="About Arenal Adventure Experiences"
-        data-es="Sobre Arenal Adventure Experiences">
+      <h2 data-en="About Arenal Adventure Experiences"
+          data-es="Sobre Arenal Adventure Experiences">
         About Arenal Adventure Experiences
       </h2>
 
-      <h3
-        data-en="Discover La Fortuna. Experience Costa Rica."
-        data-es="Descubre La Fortuna. Vive Costa Rica.">
+      <h3 data-en="Discover La Fortuna. Experience Costa Rica."
+          data-es="Descubre La Fortuna. Vive Costa Rica.">
         Discover La Fortuna. Experience Costa Rica.
       </h3>
 
-      <p
-        data-en="Welcome to Arenal Adventure Experiences, your guide to discovering unforgettable adventures in La Fortuna, Costa Rica."
-        data-es="Te damos la bienvenida a Arenal Adventure Experiences, tu guía para descubrir aventuras inolvidables en La Fortuna, Costa Rica.">
+      <p data-en="Welcome to Arenal Adventure Experiences, your guide to discovering unforgettable adventures in La Fortuna, Costa Rica."
+         data-es="Te damos la bienvenida a Arenal Adventure Experiences, tu guía para descubrir aventuras inolvidables en La Fortuna, Costa Rica.">
         Welcome to Arenal Adventure Experiences, your guide to discovering unforgettable adventures in La Fortuna, Costa Rica.
       </p>
 
-      <p
-        data-en="From the breathtaking landscapes surrounding the Arenal Volcano to exciting outdoor activities and the beauty of the tropical rainforest, our goal is to help you explore everything that makes this destination so special."
-        data-es="Desde los impresionantes paisajes que rodean el Volcán Arenal hasta las emocionantes actividades al aire libre y la belleza del bosque tropical, queremos ayudarte a descubrir todo lo que hace tan especial a este destino.">
+      <p data-en="From the breathtaking landscapes surrounding the Arenal Volcano to exciting outdoor activities and the beauty of the tropical rainforest, our goal is to help you explore everything that makes this destination so special."
+         data-es="Desde los impresionantes paisajes que rodean el Volcán Arenal hasta las emocionantes actividades al aire libre y la belleza del bosque tropical, queremos ayudarte a descubrir todo lo que hace tan especial a este destino.">
         From the breathtaking landscapes surrounding the Arenal Volcano to exciting outdoor activities and the beauty of the tropical rainforest, our goal is to help you explore everything that makes this destination so special.
       </p>
 
-      <p
-        data-en="We bring together a variety of experiences to help travelers discover exciting activities, connect with nature, and make the most of their time in Costa Rica."
-        data-es="Reunimos una variedad de experiencias para que los viajeros descubran actividades emocionantes, conecten con la naturaleza y aprovechen al máximo su tiempo en Costa Rica.">
+      <p data-en="We bring together a variety of experiences to help travelers discover exciting activities, connect with nature, and make the most of their time in Costa Rica."
+         data-es="Reunimos una variedad de experiencias para que los viajeros descubran actividades emocionantes, conecten con la naturaleza y aprovechen al máximo su tiempo en Costa Rica.">
         We bring together a variety of experiences to help travelers discover exciting activities, connect with nature, and make the most of their time in Costa Rica.
       </p>
 
-      <h3
-        data-en="Our Mission"
-        data-es="Nuestra misión">
-        Our Mission
-      </h3>
+      <ul class="feature-list">
+        <li data-en="Different activities to suit your interests" data-es="Diferentes actividades según tus intereses">Different activities to suit your interests</li>
+        <li data-en="Information about requirements and availability" data-es="Información sobre requisitos y disponibilidad">Information about requirements and availability</li>
+        <li data-en="Personal assistance with your inquiry" data-es="Atención personalizada para tu consulta">Personal assistance with your inquiry</li>
+      </ul>
 
-      <p
-        data-en="Our mission is to make discovering La Fortuna easier by helping visitors explore activities and find experiences that match their interests, travel style, and sense of adventure."
-        data-es="Nuestra misión es facilitar el descubrimiento de La Fortuna, ayudando a los visitantes a conocer diferentes actividades y encontrar experiencias que se adapten a sus intereses, estilo de viaje y espíritu aventurero.">
-        Our mission is to make discovering La Fortuna easier by helping visitors explore activities and find experiences that match their interests, travel style, and sense of adventure.
-      </p>
-
-      <h3
-        data-en="Explore La Fortuna Your Way"
-        data-es="Explora La Fortuna a tu manera">
-        Explore La Fortuna Your Way
-      </h3>
-
-      <p
-        data-en="Whether you're looking for adrenaline-filled adventures or unforgettable ways to enjoy Costa Rica's natural beauty, start planning your next experience with us."
-        data-es="Ya sea que busques aventuras llenas de adrenalina o formas inolvidables de disfrutar la belleza natural de Costa Rica, comienza a planear tu próxima experiencia con nosotros.">
-        Whether you're looking for adrenaline-filled adventures or unforgettable ways to enjoy Costa Rica's natural beauty, start planning your next experience with us.
-      </p>
-
-      <a class="btn"
-         href="#tours"
+      <a class="btn" href="#tours"
          data-en="Explore Our Adventures"
-         data-es="Explora nuestras aventuras">
-        Explore Our Adventures
-      </a> 
-    <section id="tours">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow"
-               data-en="Choose your adventure"
-               data-es="Elige tu aventura">Choose your adventure</div>
-          <h2 data-en="Explore our experiences"
-              data-es="Explora nuestras experiencias">Explore our experiences</h2>
-          <p data-en="Discover river adventures and outdoor activities around La Fortuna. Contact us to confirm current prices, schedules and availability."
-             data-es="Descubre aventuras en el río y actividades al aire libre en La Fortuna. Contáctanos para confirmar precios, horarios y disponibilidad actuales.">
-            Discover river adventures and outdoor activities around La Fortuna. Contact us to confirm current prices, schedules and availability.
-          </p>
-        </div>
-
-        <div class="cards">
-          <article class="tour-card">
-            <img src="180A1896.JPG" alt="Rafting on the Balsa River" loading="lazy">
-            <div class="tour-content">
-              <span class="tour-tag" data-en="Family friendly" data-es="Ideal para familias">Family friendly</span>
-              <h3 data-en="Balsa River Rafting — Class II & III"
-                  data-es="Rafting en el río Balsa — Clase II y III">Balsa River Rafting — Class II & III</h3>
-              <p data-en="Enjoy an exciting rafting adventure with a mix of splashy rapids and calmer sections. Ask us about age requirements and river conditions."
-                 data-es="Disfruta una emocionante aventura de rafting con rápidos divertidos y secciones más tranquilas. Consulta los requisitos de edad y las condiciones del río.">
-                Enjoy an exciting rafting adventure with a mix of splashy rapids and calmer sections. Ask us about age requirements and river conditions.
-              </p>
-             
-<div class="tour-meta">
-  <span data-en=" Class II–III Rafting"
-        data-es="Rafting Clase II–III">
-     Class II–III Rafting
-  </span>
-
-  <span data-en=" La Fortuna, Costa Rica"
-        data-es=" La Fortuna, Costa Rica">
-    La Fortuna, Costa Rica
-  </span>
-</div>
-
-              <div class="tour-price">$75 <small data-en="per person" data-es="por persona · precio de referencia">per person </small></div>
-              <a class="btn" href="#booking" data-tour="Balsa River Rafting — Class II & III"
-                 data-en="Ask about this tour" data-es="Consultar este tour">Ask about this tour</a>
-            </div>
-          </article>
-
-          <article class="tour-card">
-            <img src="DSC_6447.JPG" alt="Rafting adventure on the Sarapiqui River" loading="lazy">
-            <div class="tour-content">
-              <span class="tour-tag" data-en="River adventure" data-es="Aventura en el río">River adventure</span>
-              <h3 data-en="Sarapiquí River Rafting — Class III"
-                  data-es="Rafting en el río Sarapiquí — Clase III">Sarapiquí River Rafting — Class III</h3>
-              <p data-en="Experience a beautiful river surrounded by tropical scenery. Contact us to check departure dates and minimum group requirements."
-                 data-es="Vive la experiencia de un hermoso río rodeado de paisajes tropicales. Contáctanos para consultar fechas de salida y requisitos mínimos de grupo.">
-                Experience a beautiful river surrounded by tropical scenery. Contact us to check departure dates and minimum group requirements.
-              </p>
-              <div class="tour-meta">
-                <span data-en=" Class III" data-es=" Clase III">Class III</span>
-                <span data-en="Perfect for families" data-es="Perfecto para familias"> Perfect for families </span>
-              </div>
-              <div class="tour-price">$70 <small data-en="per person" data-es="por persona · precio de referencia">per person </small></div>
-              <a class="btn" href="#booking" data-tour="Sarapiquí River Rafting — Class III"
-                 data-en="Ask about this tour" data-es="Consultar este tour">Ask about this tour</a>
-            </div>
-          </article>
-
-          <article class="tour-card">
-            <img src="DSC_5643.JPG" alt="Class III and IV rafting on the Sarapiqui River" loading="lazy">
-            <div class="tour-content">
-              <span class="tour-tag" data-en="For thrill seekers" data-es="Para quienes buscan adrenalina">For thrill seekers</span>
-              <h3 data-en="Sarapiquí River Rafting — Class III & IV"
-                  data-es="Rafting en el río Sarapiquí — Clase III y IV">Sarapiquí River Rafting — Class III & IV</h3>
-              <p data-en="A more demanding whitewater adventure for guests looking for an intense river experience. Ask about age, swimming and physical requirements."
-                 data-es="Una aventura de aguas rápidas más exigente para quienes buscan una experiencia intensa. Consulta los requisitos de edad, natación y condición física.">
-                A more demanding whitewater adventure for guests looking for an intense river experience. Ask about age, swimming and physical requirements.
-              </p>
-              <div class="tour-meta">
-                <span data-en=" Class III–IV" data-es=" Clase III–IV"> Class III–IV</span>
-                <span data-en="Adrenaline Junkies" data-es="Adicto a la adrenalina">Adrenaline Junkies</span>
-              </div>
-              <div class="tour-price">$88 <small data-en="per person" data-es="por persona">per person</small></div>
-              <a class="btn" href="#booking" data-tour="Sarapiquí River Rafting — Class III & IV"
-                 data-en="Ask about this tour" data-es="Consultar este tour">Ask about this tour</a>
-            </div>
-          </article>
-
-          <article class="tour-card">
-            <img src="ARC_4068.JPG" alt="Balsa River Adrenaline Experience" loading="lazy">
-            <div class="tour-content">
-              <span class="tour-tag" data-en="Adrenaline" data-es="Adrenalina">Adrenaline</span>
-              <h3 data-en="Balsa River Adrenaline Experience"
-                  data-es="Experiencia de adrenalina en el río Balsa">Balsa River Adrenaline Experience</h3>
-              <p data-en="Discover an exciting rafting option on the Balsa River. Contact us to confirm the current itinerary, requirements and availability."
-                 data-es="Descubre una emocionante opción de rafting en el río Balsa. Contáctanos para confirmar el itinerario, los requisitos y la disponibilidad actuales.">
-                Discover an exciting rafting option on the Balsa River. Contact us to confirm the current itinerary, requirements and availability.
-              </p>
-              <div class="tour-meta">
-                <span data-en="River adventure" data-es=" Aventura en el río"> River adventure</span>
-                <span data-en="River adventure" data-es="Aventura en el rio">River Adventure</span>
-              </div>
-              <div class="tour-price">$80 <small data-en="per person" data-es="por persona">per person</small></div>
-              <a class="btn" href="#booking" data-tour="Balsa River Adrenaline Experience"
-                 data-en="Ask about this tour" data-es="Consultar este tour">Ask about this tour</a>
-            </div>
-          </article>
-
-          <article class="tour-card">
-            <img src="DJI_0255.jpg" alt="Jet Ski adventure" loading="lazy">
-            <div class="tour-content">
-              <span class="tour-tag" data-en="Water adventure" data-es="Aventura acuática">Water adventure</span>
-              <h3 data-en="Jet Ski Adventure"
-                  data-es="Aventura en Jet Ski">Jet Ski Adventure</h3>
-              <p data-en="Add speed and excitement to your trip with a Jet Ski outing. Ask us about the location, duration, age restrictions and available times."
-                 data-es="Añade velocidad y emoción a tu viaje con un paseo en Jet Ski. Consulta la ubicación, duración, restricciones de edad y horarios disponibles.">
-                Add speed and excitement to your trip with a Jet Ski outing. Ask us about the location, duration, age restrictions and available times.
-              </p>
-              <div class="tour-meta">
-                <span data-en="On the Arenal Lake" data-es="En el Lago Arenal">En el agua</span>
-                <span data-en="By availability" data-es=" Según disponibilidad"> By availability</span>
-              </div>
-              <div class="tour-price">$125 <small data-en="Price for a Double" data-es="Precio por un doble">Price for a double </small></div>
-              <a class="btn" href="#booking" data-tour="Jet Ski Adventure"
-                 data-en="Ask about this tour" data-es="Consultar este tour">Ask about this tour</a>
-            </div>
-          </article>
-
-          <article class="tour-card">
-            <img src="Ecological%20park_%20ATV%20Trail.jpg" alt="ATV riding on a jungle trail" loading="lazy">
-            <div class="tour-content">
-              <span class="tour-tag" data-en="Jungle trails" data-es="Senderos de la selva">Jungle trails</span>
-              <h3 data-en="Jungle and Maleku ATV Adventure"
-                  data-es="Aventura en ATV por la selva y Maleku">Jungle and Maleku ATV Adventure</h3>
-              <p data-en="Explore off-road trails and learn about the local surroundings. Confirm driver licensing, passenger rules and tour details before booking."
-                 data-es="Explora caminos todoterreno y conoce el entorno local. Confirma los requisitos de licencia, las reglas para pasajeros y los detalles antes de reservar.">
-                Explore off-road trails and learn about the local surroundings. Confirm driver licensing, passenger rules and tour details before booking.
-              </p>
-              <div class="tour-meta">
-                <span data-en=" Off-road trails" data-es="Caminos todoterreno"> Off-road trails</span>
-                <span data-en=" License is required" data-es="Licencia es requerida"> License is required</span>
-              </div>
-              <div class="tour-price">$95 <small data-en="Price for a Single ATV" data-es="Precio por un Sencillo">Price for a Single ATV </small></div>
-              <a class="btn" href="#booking" data-tour="Jungle and Maleku ATV Adventure"
-                 data-en="Ask about this tour" data-es="Consultar este tour">Ask about this tour</a>
-            </div>
-          </article>
-
-          <article class="tour-card">
-            <img src="8I3A3754-Edit.jpg" alt="Side-by-Side off-road adventure" loading="lazy">
-            <div class="tour-content">
-              <span class="tour-tag" data-en="Group adventure" data-es="Aventura en grupo">Group adventure</span>
-              <h3 data-en="Side-by-Side Adventure"
-                  data-es="Aventura en Side-by-Side">Side-by-Side Adventure</h3>
-              <p data-en="Explore the area in a Side-by-Side vehicle. The displayed reference rate may be per vehicle or group, so confirm capacity and final pricing before booking."
-                 data-es="Explora la zona en un vehículo Side-by-Side. La tarifa de referencia puede ser por vehículo o grupo; confirma la capacidad y el precio final antes de reservar.">
-                Explore the area in a Side-by-Side vehicle. The displayed reference rate may be per vehicle or group, so confirm capacity and final pricing before booking.
-              </p>
-              <div class="tour-meta">
-                <span data-en="🌳 Off-road experience" data-es="🌳 Experiencia todoterreno">🌳 Off-road experience</span>
-                <span data-en="👥 Ask about capacity" data-es="👥 Consulta la capacidad">👥 Ask about capacity</span>
-              </div>
-              <div class="tour-price">$270 <small data-en="Price per group" data-es="Precio por grupo">Price per group</small></div>
-              <a class="btn" href="#booking" data-tour="Side-by-Side Adventure"
-                 data-en="Ask about this tour" data-es="Consultar este tour">Ask about this tour</a>
-            </div>
-          </article>
-        </div>
-
-        <p class="note"
-           data-en="All prices are references only and must be confirmed before booking. Experiences may be operated by independent providers. Availability, inclusions, schedules and restrictions vary by activity."
-           data-es="Todos los precios son únicamente referencias y deben confirmarse antes de reservar. Algunas experiencias pueden ser operadas por proveedores independientes. La disponibilidad, inclusiones, horarios y restricciones varían según la actividad.">
-          All prices are references only and must be confirmed before booking. Experiences may be operated by independent providers. Availability, inclusions, schedules and restrictions vary by activity.
-        </p>
-      </div>
-    </section> 
-    
-<img class="about-image"
-     src="./volcan-arenal.png.png"
-     alt="Volcán Arenal en Costa Rica"
-     loading="lazy"> 
-
-     
-<div class="about-copy">
-  <div class="eyebrow"
-       data-en="Discover La Fortuna, Costa Rica"
-       data-es="Descubre La Fortuna, Costa Rica">Discover La Fortuna, Costa Rica</div>
-
-  <h2 data-en="Make the Most of Your Time in La Fortuna"
-      data-es="Aprovecha al Máximo tu Visita a La Fortuna">Make the Most of Your Time in La Fortuna</h2>
-
-  <p data-en="Surrounded by lush rainforests and the majestic Arenal Volcano, La Fortuna is one of Costa Rica's top destinations for adventure and nature lovers. From exciting outdoor activities to unforgettable rainforest experiences, there's something for every kind of traveler."
-     data-es="Rodeada de exuberantes bosques tropicales y del majestuoso volcán Arenal, La Fortuna es uno de los destinos favoritos de Costa Rica para los amantes de la aventura y la naturaleza. Desde emocionantes actividades al aire libre hasta experiencias inolvidables en el bosque tropical, hay opciones para todo tipo de viajeros.">
-    Surrounded by lush rainforests and the majestic Arenal Volcano, La Fortuna is one of Costa Rica's top destinations for adventure and nature lovers. From exciting outdoor activities to unforgettable rainforest experiences, there's something for every kind of traveler.
-  </p>
-
-  <p data-en="Explore the activities available in the area and let us help you choose the experiences that best fit your interests, schedule, and adventure level."
-     data-es="Explora las actividades disponibles en la zona y permítenos ayudarte a elegir las experiencias que mejor se adapten a tus intereses, horario y nivel de aventura.">
-    Explore the activities available in the area and let us help you choose the experiences that best fit your interests, schedule, and adventure level.
-  </p>
-
-  <ul>
-    <li data-en="Adventure for Every Traveler: Discover experiences for different interests and adventure levels."
-        data-es="Aventura para Todos: Descubre experiencias para distintos intereses y niveles de aventura.">
-      <strong>Adventure for Every Traveler:</strong> Discover experiences for different interests and adventure levels.
-    </li>
-    <li data-en="Plan with Confidence: Get helpful information about tour requirements, schedules, and availability."
-        data-es="Planifica con Confianza: Obtén información sobre los requisitos, horarios y disponibilidad de los tours.">
-      <strong>Plan with Confidence:</strong> Get helpful information about tour requirements, schedules, and availability.
-    </li>
-    <li data-en="Personalized Assistance: Contact us for help choosing the right experiences for your trip."
-        data-es="Atención Personalizada: Contáctanos para ayudarte a elegir las experiencias ideales para tu viaje.">
-      <strong>Personalized Assistance:</strong> Contact us for help choosing the right experiences for your trip.
-    </li>
-  </ul>
-</div>
-
-
-          <ul class="feature-list">
-            <li data-en="Different activities to suit your interests" data-es="Diferentes actividades según tus intereses">Different activities to suit your interests</li>
-            <li data-en="Information about requirements and availability" data-es="Información sobre requisitos y disponibilidad">Information about requirements and availability</li>
-            <li data-en="Personal assistance with your inquiry" data-es="Atención personalizada para tu consulta">Personal assistance with your inquiry</li>
-          </ul>
-
-          <a class="btn" href="#booking"
-             data-en="Plan your adventure"
-             data-es="Planea tu aventura">Plan your adventure</a>
-        </div>
-      </div>
-    </section>
-
-    
-<div class="eyebrow"
-     data-en="Let's Plan Your Adventure"
-     data-es="Planeemos tu Aventura">Let's Plan Your Adventure</div>
-
-<h2 data-en="Find the Perfect Experience for Your Trip"
-    data-es="Encuentra la Experiencia Ideal para tu Viaje">Find the Perfect Experience for Your Trip</h2>
-
-<p data-en="Tell us what kind of adventure you're looking for in La Fortuna. Complete the form to send your inquiry through WhatsApp, and our team will help you with the next steps."
-   data-es="Cuéntanos qué tipo de aventura buscas en La Fortuna. Completa el formulario para enviarnos tu consulta por WhatsApp y nuestro equipo te ayudará con los siguientes pasos.">
-  Tell us what kind of adventure you're looking for in La Fortuna. Complete the form to send your inquiry through WhatsApp, and our team will help you with the next steps.
-</p>
-
-<h3 data-en="Contact Us on WhatsApp"
-    data-es="Contáctanos por WhatsApp">Contact Us on WhatsApp</h3>
-
-<p>
-  <a href="https://wa.me/50672500633" target="_blank" rel="noopener noreferrer">+506 7250 0633</a>
-</p>
-
-<p data-en="For a faster response, please include your preferred tour date and the number of people in your group."
-   data-es="Para recibir una respuesta más rápida, incluye la fecha en que deseas realizar el tour y la cantidad de personas de tu grupo.">
-  For a faster response, please include your preferred tour date and the number of people in your group.
-</p>
-
-<p data-en="Please note: Your inquiry is not a confirmed booking. Your reservation will only be confirmed after availability and booking details have been verified by the provider."
-   data-es="Importante: Tu consulta no constituye una reserva confirmada. La reserva quedará confirmada únicamente cuando el proveedor haya verificado la disponibilidad y los detalles de la reservación.">
-  Please note: Your inquiry is not a confirmed booking. Your reservation will only be confirmed after availability and booking details have been verified by the provider.
-</p> 
-
-     
-<form class="booking-form" id="bookingForm">
-  <div class="form-grid">
-
-    <div class="field">
-      <label for="name" data-en="Full Name *" data-es="Nombre completo *">Full Name *</label>
-      <input id="name" name="name" type="text" autocomplete="name" required
-             data-placeholder-en="Enter your full name"
-             data-placeholder-es="Escribe tu nombre completo"
-             placeholder="Enter your full name">
-    </div>
-
-    <div class="field">
-      <label for="email" data-en="Email Address *" data-es="Correo electrónico *">Email Address *</label>
-      <input id="email" name="email" type="email" autocomplete="email" required
-             data-placeholder-en="you@example.com"
-             data-placeholder-es="tu@ejemplo.com"
-             placeholder="you@example.com">
-    </div>
-
-    <div class="field full">
-      <label for="activity" data-en="Which Experience Are You Interested In? *" data-es="¿Qué experiencia te interesa? *">Which Experience Are You Interested In? *</label>
-      <select id="activity" name="activity" required>
-        <option value="" data-en="Select an experience" data-es="Selecciona una experiencia">Select an experience</option>
-        <option value="Balsa River Rafting — Class II & III" data-en="Balsa River Rafting — Class II & III" data-es="Rafting en el río Balsa — Clase II y III">Balsa River Rafting — Class II & III</option>
-        <option value="Sarapiquí River Rafting — Class III" data-en="Sarapiquí River Rafting — Class III" data-es="Rafting en el río Sarapiquí — Clase III">Sarapiquí River Rafting — Class III</option>
-        <option value="Sarapiquí River Rafting — Class III & IV" data-en="Sarapiquí River Rafting — Class III & IV" data-es="Rafting en el río Sarapiquí — Clase III y IV">Sarapiquí River Rafting — Class III & IV</option>
-        <option value="Balsa River Adrenaline Experience" data-en="Balsa River Adrenaline Experience" data-es="Experiencia de adrenalina en el río Balsa">Balsa River Adrenaline Experience</option>
-        <option value="Jet Ski Adventure" data-en="Jet Ski Adventure" data-es="Aventura en Jet Ski">Jet Ski Adventure</option>
-        <option value="Jungle and Maleku ATV Adventure" data-en="Jungle and Maleku ATV Adventure" data-es="Aventura en ATV por la selva y Maleku">Jungle and Maleku ATV Adventure</option>
-        <option value="Side-by-Side Adventure" data-en="Side-by-Side Adventure" data-es="Aventura en Side-by-Side">Side-by-Side Adventure</option>
-        <option value="Other activity" data-en="Other Activity" data-es="Otra actividad">Other Activity</option>
-      </select>
-    </div>
-
-    <div class="field">
-      <label for="date" data-en="Preferred Date *" data-es="Fecha deseada *">Preferred Date *</label>
-      <input id="date" name="date" type="date" required>
-    </div>
-
-    <div class="field">
-      <label for="people" data-en="Number of Guests *" data-es="Número de personas *">Number of Guests *</label>
-      <input id="people" name="people" type="number" min="1" max="100" required
-             data-placeholder-en="e.g. 4 guests"
-             data-placeholder-es="Ej. 4 personas"
-             placeholder="e.g. 4 guests">
-    </div>
-
-    <div class="field full">
-      <label for="language" data-en="Language of Communication" data-es="Idioma de comunicación">Language of Communication</label>
-      <select id="language" name="language">
-        <option value="English" data-en="English" data-es="Inglés">English</option>
-        <option value="Spanish" data-en="Spanish" data-es="Español">Spanish</option>
-      </select>
-    </div>
-
-    <div class="field full">
-      <label for="message" data-en="Additional Information (Optional)" data-es="Información adicional (opcional)">Additional Information (Optional)</label>
-      <textarea id="message" name="message"
-                data-placeholder-en="Hotel, children's ages, questions or special requests..."
-                data-placeholder-es="Hotel, edades de los niños, preguntas o solicitudes especiales..."
-                placeholder="Hotel, children's ages, questions or special requests..."></textarea>
+         data-es="Explora nuestras aventuras">Explore Our Adventures</a>
     </div>
 
   </div>
+</section>
 
-  <button class="btn" type="submit"
-          data-en="Send Inquiry via WhatsApp"
-          data-es="Enviar consulta por WhatsApp">Send Inquiry via WhatsApp</button>
+<!-- EXPERIENCES -->
 
-  <p class="form-note"
-     data-en="Your inquiry will open in WhatsApp. This does not confirm a booking. Your reservation is confirmed only after the provider verifies availability and booking details."
-     data-es="Tu consulta se abrirá en WhatsApp. Esto no confirma una reserva. Tu reservación quedará confirmada únicamente cuando el proveedor verifique la disponibilidad y los detalles de la reserva.">
-    Your inquiry will open in WhatsApp. This does not confirm a booking. Your reservation is confirmed only after the provider verifies availability and booking details.
-  </p>
-</form> 
-          </p>
-        </form>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow" data-en="Good to know" data-es="Información útil">Good to know</div>
-          <h2 data-en="Frequently asked questions"
-              data-es="Preguntas frecuentes">Frequently asked questions</h2>
-        </div>
-
-        <div class="faq-list">
-          <details>
-            <summary data-en="How do I confirm availability?"
-                     data-es="¿Cómo confirmo la disponibilidad?">How do I confirm availability?</summary>
-            <p data-en="Send us your preferred date, activity and group size through WhatsApp. Your booking is confirmed only after availability and details have been verified."
-               data-es="Envíanos tu fecha preferida, actividad y tamaño del grupo por WhatsApp. Tu reservación se confirma únicamente después de verificar la disponibilidad y los detalles.">
-              Send us your preferred date, activity and group size through WhatsApp. Your booking is confirmed only after availability and details have been verified.
-            </p>
-          </details>
-
-          <details>
-            <summary data-en="Are the prices on this page final?"
-                     data-es="¿Los precios de esta página son definitivos?">Are the prices on this page final?</summary>
-            <p data-en="No. Prices are reference amounts and may change. Please confirm the current rate, taxes, inclusions and payment terms before booking."
-               data-es="No. Los precios son referencias y pueden cambiar. Confirma la tarifa actual, impuestos, inclusiones y condiciones de pago antes de reservar.">
-              No. Prices are reference amounts and may change. Please confirm the current rate, taxes, inclusions and payment terms before booking.
-            </p>
-          </details>
-
-          <details>
-            <summary data-en="Are there age or safety requirements?"
-                     data-es="¿Hay requisitos de edad o seguridad?">Are there age or safety requirements?</summary>
-            <p data-en="Yes. Requirements vary by activity and conditions. Ask the operator about minimum age, swimming ability, physical requirements, equipment and safety instructions."
-               data-es="Sí. Los requisitos varían según la actividad y las condiciones. Consulta con el operador la edad mínima, capacidad para nadar, condición física, equipo e instrucciones de seguridad.">
-              Yes. Requirements vary by activity and conditions. Ask the operator about minimum age, swimming ability, physical requirements, equipment and safety instructions.
-            </p>
-          </details>
-
-          <details>
-            <summary data-en="Are all activities operated by the same company?"
-                     data-es="¿Todas las actividades son operadas por la misma empresa?">Are all activities operated by the same company?</summary>
-            <p data-en="Not necessarily. Some experiences may be provided by independent operators. Confirm the provider's identity, terms and meeting point before paying."
-               data-es="No necesariamente. Algunas experiencias pueden ser ofrecidas por operadores independientes. Confirma la identidad del proveedor, las condiciones y el punto de encuentro antes de pagar.">
-              Not necessarily. Some experiences may be provided by independent operators. Confirm the provider's identity, terms and meeting point before paying.
-            </p>
-          </details>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-content">
-      <div>
-        <strong>ARENAL FORTUNA ADVENTURE EXPERIENCES</strong>
-        <p data-en="Explore La Fortuna, Costa Rica"
-           data-es="Explora La Fortuna, Costa Rica">Explore La Fortuna, Costa Rica</p>
-        <p>© <span id="year"></span> Arenal Fortuna Adventure Experiences</p>
-      </div>
-
-      <div class="footer-links">
-        <a href="#tours" data-en="Experiences" data-es="Experiencias">Experiences</a>
-        <a href="#booking" data-en="Contact" data-es="Contacto">Contact</a>
-        <a href="https://wa.me/50672500633" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-      </div>
-    </div>
-  </footer>
-
-  <a class="whatsapp-float" href="https://wa.me/50672500633"
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Contact us on WhatsApp">WhatsApp</a>
-
-  <script>
-    const languageButtons = document.querySelectorAll("[data-language]");
-    const translatableElements = document.querySelectorAll("[data-en][data-es]");
-
-    function setLanguage(language) {
-      document.documentElement.lang = language;
-
-      translatableElements.forEach(function (element) {
-        const translation = element.getAttribute("data-" + language);
-        if (translation !== null) {
-          element.textContent = translation;
-        }
-      });
-
-      document.querySelectorAll("[data-placeholder-en][data-placeholder-es]").forEach(function (element) {
-        const placeholder = element.getAttribute("data-placeholder-" + language);
-        if (placeholder !== null) {
-          element.setAttribute("placeholder", placeholder);
-        }
-      });
-
-      languageButtons.forEach(function (button) {
-        const active = button.getAttribute("data-language") === language;
-        button.classList.toggle("active", active);
-        button.setAttribute("aria-pressed", active ? "true" : "false");
-      });
-    }
-
-    languageButtons.forEach(function (button) {
-      button.addEventListener("click", function () {
-        setLanguage(button.getAttribute("data-language"));
-      });
-    });
-
-    document.querySelectorAll("a[data-tour]").forEach(function (link) {
-      link.addEventListener("click", function () {
-        const activity = document.getElementById("activity");
-        activity.value = link.getAttribute("data-tour");
-      });
-    });
-
-    document.getElementById("bookingForm").addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      const formData = new FormData(this);
-      const language = document.documentElement.lang;
-
-      const labels = language === "es"
-        ? {
-            title: "Solicitud de información o reservación",
-            name: "Nombre",
-            email: "Correo electrónico",
-            activity: "Experiencia",
-            date: "Fecha preferida",
-            people: "Número de personas",
-            language: "Idioma preferido",
-            message: "Detalles adicionales"
-          }
-        : {
-            title: "Booking inquiry",
-            name: "Name",
-            email: "Email",
-            activity: "Experience",
-            date: "Preferred date",
-            people: "Number of people",
-            language: "Preferred language",
-            message: "Additional details"
-          };
-
-      let message = labels.title + "\n\n";
-
-      ["name", "email", "activity", "date", "people", "language", "message"].forEach(function (key) {
-        const value = (formData.get(key) || "").toString().trim();
-        if (value) {
-          message += labels[key] + ": " + value + "\n";
-        }
-      });
-
-      const whatsappUrl = "https://wa.me/50672500633?text=" + encodeURIComponent(message);
-      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-    });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const dateInput = document.getElementById("date");
-    const today = new Date();
-    const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
-      .toISOString()
-      .split("T")[0];
-
-    dateInput.min = localToday;
-  </script>
-</body>
-</html>
-
-<section id="cancellation-policy">
+<section class="content-section" id="tours">
   <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow"
-           data-en="IMPORTANT INFORMATION"
-           data-es="INFORMACIÓN IMPORTANTE">
-        IMPORTANT INFORMATION
-      </div>
 
-      <h2 data-en="Cancellation Policy"
-          data-es="Políticas de Cancelación">
-        Cancellation Policy
+    <div class="section-heading">
+      <div class="eyebrow" data-en="Choose your adventure" data-es="Elige tu aventura">Choose your adventure</div>
+      <h2 data-en="Explore our experiences" data-es="Explora nuestras experiencias">Explore our experiences</h2>
+      <p data-en="Discover river adventures and outdoor activities around La Fortuna. Contact us to confirm current prices, schedules and availability."
+         data-es="Descubre aventuras en el río y actividades al aire libre en La Fortuna. Contáctanos para confirmar precios, horarios y disponibilidad actuales.">
+        Discover river adventures and outdoor activities around La Fortuna. Contact us to confirm current prices, schedules and availability.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <article class="tour-card">
+        <img src="180A1896.JPG" alt="Rafting on the Balsa River" loading="lazy">
+        <div class="tour-content">
+          <span class="tour-tag" data-en="Family friendly" data-es="Ideal para familias">Family friendly</span>
+          <h3 data-en="Balsa River Rafting — Class II & III" data-es="Rafting en el río Balsa — Clase II y III">Balsa River Rafting — Class II & III</h3>
+          <p data-en="Enjoy an exciting rafting adventure with a mix of splashy rapids and calmer sections. Ask us about age requirements and river conditions."
+             data-es="Disfruta una emocionante aventura de rafting con rápidos divertidos y secciones más tranquilas. Consulta los requisitos de edad y las condiciones del río.">
+            Enjoy an exciting rafting adventure with a mix of splashy rapids and calmer sections. Ask us about age requirements and river conditions.
+          </p>
+          <div class="tour-meta"><span>Class II–III Rafting</span><span>La Fortuna, Costa Rica</span></div>
+          <div class="tour-price">$75 <small data-en="per person (reference price)" data-es="por persona (precio de referencia)">per person (reference price)</small></div>
+          <a class="btn" href="#booking" data-tour="Balsa River Rafting — Class II & III" data-en="Ask about this tour" data-es="Consultar este tour">Ask about this tour</a>
+        </div>
+      </article>
+
+      <article class="tour-card">
+        <img src="DSC_6447.JPG" alt="Rafting adventure on the Sarapiqui River" loading="lazy">
+        <div class="tour-content">
+          <span class="tour-tag" data-en="River adventure" data-es="Aventura en el río">River adventure</span>
+          <h3 data-en="Sarapiquí River Rafting — Class III" data-es="Rafting en el río Sarapiquí — Clase III">Sarapiquí River Rafting — Class III</h3>
+          <p data-en="Experience a beautiful river surrounded by tropical scenery. Contact us to check departure dates and minimum group requirements."
+             data-es="Vive la experiencia de un hermoso río rodeado de paisajes tropicales. Contáctanos para consultar fechas de salida y requisitos mínimos de grupo.">
+            Experience a beautiful river surrounded by tropical scenery. Contact us to check departure dates and minimum group requirements.
+          </p>
+          <div class="tour-meta"><span>Class III</span><span data-en="Check requirements" data-es="Consulta los requisitos">Check requirements</span></div>
+          <div class="tour-price">$70 <small data-en="per person (reference price)" data-es="por persona (precio de referencia)">per person (reference price)</small></div>
+          <a class="btn" href="#booking" data-tour="Sarapiquí River Rafting — Class III" data-en="Ask about this tour" data-es="Consultar este tour">Ask about this tour</a>
+        </div>
+      </article>
+
+      <article class="tour-card">
+        <img src="DSC_5643.JPG" alt="Class III and IV rafting on the Sarapiqui River" loading="lazy">
+        <div class="tour-content">
+          <span class="tour-tag" data-en="For thrill seekers" data-es="Para quienes buscan adrenalina">For thrill seekers</span>
+          <h3 data-en="Sarapiquí River Rafting — Class III & IV" data-es="Rafting en el río Sarapiquí — Clase III y IV">Sarapiquí River Rafting — Class III & IV</h3>
+          <p data-en="A more demanding whitewater adventure for guests looking for an intense river experience. Ask about age, swimming and physical requirements."
+             data-es="Una aventura de aguas rápidas más exigente para quienes buscan una experiencia intensa. Consulta los requisitos de edad, natación y condición física.">
+            A more demanding whitewater adventure for guests looking for an intense river experience. Ask about age, swimming and physical requirements.
+          </p>
+          <div class="tour-meta"><span>Class III–IV</span><span data-en="Advanced adventure" data-es="Aventura exigente">Advanced adventure</span></div>
+          <div class="tour-price">$88 <small data-en="per person (reference price)" data-es="por persona (precio de referencia)">per person (reference price)</small></div>
+          <a class="btn" href="#booking" data-tour="Sarapiquí River Rafting — Class III & IV" data-en="Ask about this tour" data-es="Consultar este tour">Ask about this tour</a>
+        </div>
+      </article>
+
+      <article class="tour-card">
+        <img src="ARC_4068.JPG" alt="Balsa River Adrenaline Experience" loading="lazy">
+        <div class="tour-content">
+          <span class="tour-tag" data-en="Adrenaline" data-es="Adrenalina">Adrenaline</span>
+          <h3 data-en="Balsa River Adrenaline Experience" data-es="Experiencia de adrenalina en el río Balsa">Balsa River Adrenaline Experience</h3>
+          <p data-en="Discover an exciting rafting option on the Balsa River. Contact us to confirm the current itinerary, requirements and availability."
+             data-es="Descubre una emocionante opción de rafting en el río Balsa. Contáctanos para confirmar el itinerario, los requisitos y la disponibilidad actuales.">
+            Discover an exciting rafting option on the Balsa River. Contact us to confirm the current itinerary, requirements and availability.
+          </p>
+          <div class="tour-meta"><span data-en="River adventure" data-es="Aventura en el río">River adventure</span><span data-en="Check availability" data-es="Consulta disponibilidad">Check availability</span></div>
+          <div class="tour-price">$80 <small data-en="per person (reference price)" data-es="por persona (precio de referencia)">per person (reference price)</small></div>
+          <a class="btn" href="#booking" data-tour="Balsa River Adrenaline Experience" data-en="Ask about this tour" data-es="Consultar este tour">Ask about this tour</a>
+        </div>
+      </article>
+
+      <article class="tour-card">
+        <img src="DJI_0255.jpg" alt="Jet Ski adventure" loading="lazy">
+        <div class="tour-content">
+          <span class="tour-tag" data-en="Water adventure" data-es="Aventura acuática">Water adventure</span>
+          <h3 data-en="Jet Ski Adventure" data-es="Aventura en Jet Ski">Jet Ski Adventure</h3>
+          <p data-en="Add speed and excitement to your trip with a Jet Ski outing. Ask us about the location, duration, age restrictions and available times."
+             data-es="Añade velocidad y emoción a tu viaje con un paseo en Jet Ski. Consulta la ubicación, duración, restricciones de edad y horarios disponibles.">
+            Add speed and excitement to your trip with a Jet Ski outing. Ask us about the location, duration, age restrictions and available times.
+          </p>
+          <div class="tour-meta"><span data-en="Arenal Lake" data-es="Lago Arenal">Arenal Lake</span><span data-en="By availability" data-es="Según disponibilidad">By availability</span></div>
+          <div class="tour-price">$125 <small data-en="reference price for a double" data-es="precio de referencia para dos personas">reference price for a double</small></div>
+          <a class="btn" href="#booking" data-tour="Jet Ski Adventure" data-en="Ask about this tour" data-es="Consultar este tour">Ask about this tour</a>
+        </div>
+      </article>
+
+      <article class="tour-card">
+        <img src="Ecological%20park_%20ATV%20Trail.jpg" alt="ATV riding on a jungle trail" loading="lazy">
+        <div class="tour-content">
+          <span class="tour-tag" data-en="Jungle trails" data-es="Senderos de la selva">Jungle trails</span>
+          <h3 data-en="Jungle and Maleku ATV Adventure" data-es="Aventura en ATV por la selva y Maleku">Jungle and Maleku ATV Adventure</h3>
+          <p data-en="Explore off-road trails and learn about the local surroundings. Confirm driver licensing, passenger rules and tour details before booking."
+             data-es="Explora caminos todoterreno y conoce el entorno local. Confirma los requisitos de licencia, las reglas para pasajeros y los detalles antes de reservar.">
+            Explore off-road trails and learn about the local surroundings. Confirm driver licensing, passenger rules and tour details before booking.
+          </p>
+          <div class="tour-meta"><span data-en="Off-road trails" data-es="Caminos todoterreno">Off-road trails</span><span data-en="License required" data-es="Se requiere licencia">License required</span></div>
+          <div class="tour-price">$95 <small data-en="reference price for a single ATV" data-es="precio de referencia para un ATV sencillo">reference price for a single ATV</small></div>
+          <a class="btn" href="#booking" data-tour="Jungle and Maleku ATV Adventure" data-en="Ask about this tour" data-es="Consultar este tour">Ask about this tour</a>
+        </div>
+      </article>
+
+      <article class="tour-card">
+        <img src="8I3A3754-Edit.jpg" alt="Side-by-Side off-road adventure" loading="lazy">
+        <div class="tour-content">
+          <span class="tour-tag" data-en="Group adventure" data-es="Aventura en grupo">Group adventure</span>
+          <h3 data-en="Side-by-Side Adventure" data-es="Aventura en Side-by-Side">Side-by-Side Adventure</h3>
+          <p data-en="Explore the area in a Side-by-Side vehicle. Confirm capacity, pricing and tour details before booking."
+             data-es="Explora la zona en un vehículo Side-by-Side. Confirma la capacidad, el precio y los detalles antes de reservar.">
+            Explore the area in a Side-by-Side vehicle. Confirm capacity, pricing and tour details before booking.
+          </p>
+          <div class="tour-meta"><span data-en="Off-road experience" data-es="Experiencia todoterreno">Off-road experience</span><span data-en="Ask about capacity" data-es="Consulta la capacidad">Ask about capacity</span></div>
+          <div class="tour-price">$270 <small data-en="reference price per group" data-es="precio de referencia por grupo">reference price per group</small></div>
+          <a class="btn" href="#booking" data-tour="Side-by-Side Adventure" data-en="Ask about this tour" data-es="Consultar este tour">Ask about this tour</a>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="note"
+       data-en="All prices are references only and must be confirmed before booking. Experiences may be operated by independent providers. Availability, inclusions, schedules and restrictions vary by activity."
+       data-es="Todos los precios son únicamente referencias y deben confirmarse antes de reservar. Algunas experiencias pueden ser operadas por proveedores independientes. La disponibilidad, inclusiones, horarios y restricciones varían según la actividad.">
+      All prices are references only and must be confirmed before booking. Experiences may be operated by independent providers. Availability, inclusions, schedules and restrictions vary by activity.
+    </p>
+  </div>
+</section>
+
+<!-- BOOKING / CONTACT -->
+
+<section class="content-section booking-section" id="booking">
+  <div class="container booking-grid">
+
+    <div class="booking-copy">
+      <div class="eyebrow" data-en="Let's plan your adventure" data-es="Planeemos tu aventura">Let's plan your adventure</div>
+
+      <h2 data-en="Find the Perfect Experience for Your Trip"
+          data-es="Encuentra la experiencia ideal para tu viaje">
+        Find the Perfect Experience for Your Trip
       </h2>
 
-      <p
-        data-en="Please read our cancellation policy carefully before completing your reservation. These terms apply to all reservations made through Arenal Adventure Experiences."
-        data-es="Lee cuidadosamente nuestra política de cancelación antes de completar tu reserva. Estas condiciones se aplican a todas las reservas realizadas a través de Arenal Adventure Experiences.">
-        Please read our cancellation policy carefully before completing your reservation. These terms apply to all reservations made through Arenal Adventure Experiences.
+      <p data-en="Tell us what kind of adventure you're looking for in La Fortuna. Complete the form to send your inquiry through WhatsApp, and our team will help you with the next steps."
+         data-es="Cuéntanos qué tipo de aventura buscas en La Fortuna. Completa el formulario para enviarnos tu consulta por WhatsApp y te ayudaremos con los siguientes pasos.">
+        Tell us what kind of adventure you're looking for in La Fortuna. Complete the form to send your inquiry through WhatsApp, and our team will help you with the next steps.
+      </p>
+
+      <div class="contact-details">
+        <h3 data-en="Contact us on WhatsApp" data-es="Contáctanos por WhatsApp">Contact us on WhatsApp</h3>
+        <p><a href="https://wa.me/50672500633" target="_blank" rel="noopener noreferrer">+506 7250 0633</a></p>
+        <p data-en="For a faster response, include your preferred date and group size."
+           data-es="Para recibir una respuesta más rápida, incluye la fecha deseada y la cantidad de personas.">
+          For a faster response, include your preferred date and group size.
+        </p>
+      </div>
+    </div>
+
+    <form class="booking-form" id="bookingForm">
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="name" data-en="Full Name *" data-es="Nombre completo *">Full Name *</label>
+          <input id="name" name="name" type="text" required autocomplete="name"
+                 placeholder="Enter your full name">
+        </div>
+
+        <div class="field">
+          <label for="email" data-en="Email Address *" data-es="Correo electrónico *">Email Address *</label>
+          <input id="email" name="email" type="email" required autocomplete="email"
+                 placeholder="you@example.com">
+        </div>
+
+        <div class="field full">
+          <label for="activity" data-en="Which Experience Are You Interested In? *" data-es="¿Qué experiencia te interesa? *">
+            Which Experience Are You Interested In? *
+          </label>
+          <select id="activity" name="activity" required>
+            <option value="" data-en="Select an experience" data-es="Selecciona una experiencia">Select an experience</option>
+            <option value="Balsa River Rafting — Class II & III">Balsa River Rafting — Class II & III</option>
+            <option value="Sarapiquí River Rafting — Class III">Sarapiquí River Rafting — Class III</option>
+            <option value="Sarapiquí River Rafting — Class III & IV">Sarapiquí River Rafting — Class III & IV</option>
+            <option value="Balsa River Adrenaline Experience">Balsa River Adrenaline Experience</option>
+            <option value="Jet Ski Adventure">Jet Ski Adventure</option>
+            <option value="Jungle and Maleku ATV Adventure">Jungle and Maleku ATV Adventure</option>
+            <option value="Side-by-Side Adventure">Side-by-Side Adventure</option>
+            <option value="Other activity">Other activity</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="date" data-en="Preferred Date *" data-es="Fecha deseada *">Preferred Date *</label>
+          <input id="date" name="date" type="date" required>
+        </div>
+
+        <div class="field">
+          <label for="people" data-en="Number of Guests *" data-es="Número de personas *">Number of Guests *</label>
+          <input id="people" name="people" type="number" min="1" max="100" required placeholder="e.g. 4 guests">
+        </div>
+
+        <div class="field full">
+          <label for="language" data-en="Language of Communication" data-es="Idioma de comunicación">Language of Communication</label>
+          <select id="language" name="language">
+            <option value="English">English</option>
+            <option value="Spanish">Spanish</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="message" data-en="Additional Information (Optional)" data-es="Información adicional (opcional)">Additional Information (Optional)</label>
+          <textarea id="message" name="message"
+            placeholder="Hotel, children's ages, questions or special requests..."></textarea>
+        </div>
+
+      </div>
+
+      <button class="btn" type="submit"
+              data-en="Send Inquiry via WhatsApp"
+              data-es="Enviar consulta por WhatsApp">
+        Send Inquiry via WhatsApp
+      </button>
+
+      <p class="form-note"
+         data-en="Your inquiry opens in WhatsApp. This does not confirm a booking; the provider must verify availability and details."
+         data-es="Tu consulta se abrirá en WhatsApp. Esto no confirma una reserva; el proveedor debe verificar disponibilidad y detalles.">
+        Your inquiry opens in WhatsApp. This does not confirm a booking; the provider must verify availability and details.
+      </p>
+    </form>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+
+<section class="content-section" id="faq">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow" data-en="Good to know" data-es="Información útil">Good to know</div>
+      <h2 data-en="Frequently asked questions" data-es="Preguntas frecuentes">Frequently asked questions</h2>
+    </div>
+
+    <div class="faq-list">
+      <details>
+        <summary data-en="How do I confirm availability?" data-es="¿Cómo confirmo la disponibilidad?">How do I confirm availability?</summary>
+        <p data-en="Send your preferred date, activity and group size through WhatsApp. Your booking is confirmed only after availability and details have been verified."
+           data-es="Envíanos tu fecha, actividad y tamaño del grupo por WhatsApp. Tu reserva se confirma después de verificar la disponibilidad y los detalles.">
+          Send your preferred date, activity and group size through WhatsApp. Your booking is confirmed only after availability and details have been verified.
+        </p>
+      </details>
+
+      <details>
+        <summary data-en="Are the prices on this page final?" data-es="¿Los precios de esta página son definitivos?">Are the prices on this page final?</summary>
+        <p data-en="No. Prices are reference amounts and may change. Confirm current rates, taxes, inclusions and payment terms before booking."
+           data-es="No. Los precios son referencias y pueden cambiar. Confirma las tarifas, impuestos, inclusiones y condiciones de pago antes de reservar.">
+          No. Prices are reference amounts and may change. Confirm current rates, taxes, inclusions and payment terms before booking.
+        </p>
+      </details>
+
+      <details>
+        <summary data-en="Are there age or safety requirements?" data-es="¿Hay requisitos de edad o seguridad?">Are there age or safety requirements?</summary>
+        <p data-en="Requirements vary by activity and conditions. Ask the operator about age, swimming ability, physical requirements, equipment and safety instructions."
+           data-es="Los requisitos varían según la actividad y las condiciones. Consulta con el operador sobre edad, natación, condición física, equipo e instrucciones de seguridad.">
+          Requirements vary by activity and conditions. Ask the operator about age, swimming ability, physical requirements, equipment and safety instructions.
+        </p>
+      </details>
+
+      <details>
+        <summary data-en="Are all activities operated by the same company?" data-es="¿Todas las actividades son operadas por la misma empresa?">Are all activities operated by the same company?</summary>
+        <p data-en="Not necessarily. Some experiences may be provided by independent operators. Confirm the provider, terms and meeting point before paying."
+           data-es="No necesariamente. Algunas experiencias pueden ser ofrecidas por operadores independientes. Confirma el proveedor, las condiciones y el punto de encuentro antes de pagar.">
+          Not necessarily. Some experiences may be provided by independent operators. Confirm the provider, terms and meeting point before paying.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CANCELLATION POLICY -->
+
+<section class="content-section" id="cancellation-policy">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow" data-en="Important information" data-es="Información importante">Important information</div>
+      <h2 data-en="Cancellation Policy" data-es="Política de cancelación">Cancellation Policy</h2>
+      <p data-en="Please read this policy carefully before completing your reservation. These terms apply to reservations made through Arenal Adventure Experiences."
+         data-es="Lee esta política antes de completar tu reserva. Estas condiciones se aplican a las reservas realizadas a través de Arenal Adventure Experiences.">
+        Please read this policy carefully before completing your reservation. These terms apply to reservations made through Arenal Adventure Experiences.
       </p>
     </div>
 
     <div class="policy-content">
-      <h3 data-en="1. Standard Cancellation Policy"
-          data-es="1. Política general de cancelación">
-        1. Standard Cancellation Policy
-      </h3>
 
-      <p
-        data-en="All cancellation requests must be submitted in writing. Cancellation eligibility is determined solely by the date and time the request is received by Arenal Adventure Experiences."
-        data-es="Todas las solicitudes de cancelación deben presentarse por escrito. La elegibilidad para un reembolso se determina exclusivamente según la fecha y hora en que Arenal Adventure Experiences recibe la solicitud.">
-        All cancellation requests must be submitted in writing. Cancellation eligibility is determined solely by the date and time the request is received by Arenal Adventure Experiences.
+      <h3 data-en="1. Standard Cancellation Policy" data-es="1. Política general de cancelación">1. Standard Cancellation Policy</h3>
+
+      <p data-en="All cancellation requests must be submitted in writing. Eligibility is determined by the date and time the request is received by Arenal Adventure Experiences."
+         data-es="Todas las solicitudes de cancelación deben presentarse por escrito. La elegibilidad se determina según la fecha y hora en que Arenal Adventure Experiences recibe la solicitud.">
+        All cancellation requests must be submitted in writing. Eligibility is determined by the date and time the request is received by Arenal Adventure Experiences.
       </p>
 
       <ul>
-        <li data-en="24 hours or more before the scheduled tour departure: eligible for a refund less a 15% processing fee."
-            data-es="24 horas o más antes de la salida programada: se podrá recibir un reembolso, menos un cargo del 15% por procesamiento.">
-          24 hours or more before the scheduled tour departure: eligible for a refund less a 15% processing fee.
+        <li data-en="24 hours or more before scheduled departure: refund less a 15% processing fee."
+            data-es="24 horas o más antes de la salida: reembolso menos un cargo del 15% por procesamiento.">
+          24 hours or more before scheduled departure: refund less a 15% processing fee.
         </li>
-        <li data-en="Less than 24 hours before the scheduled departure: non-refundable."
-            data-es="Menos de 24 horas antes de la salida programada: no reembolsable.">
-          Less than 24 hours before the scheduled departure: non-refundable.
+        <li data-en="Less than 24 hours before departure: non-refundable."
+            data-es="Menos de 24 horas antes de la salida: no reembolsable.">
+          Less than 24 hours before departure: non-refundable.
         </li>
         <li data-en="No-shows are non-refundable."
             data-es="Las ausencias (no-show) no son reembolsables.">
@@ -1379,79 +1024,165 @@
         </li>
       </ul>
 
-      <h3 data-en="2. Why Cancellation Fees Apply"
-          data-es="2. Por qué se aplican cargos de cancelación">
-        2. Why Cancellation Fees Apply
-      </h3>
+      <h3 data-en="2. Why Cancellation Fees Apply" data-es="2. Por qué se aplican cargos de cancelación">2. Why Cancellation Fees Apply</h3>
 
-      <p
-        data-en="Every confirmed reservation requires advance planning and the allocation of operational resources. These may include payment processing fees, booking platform commissions, banking and currency conversion fees, administration, guide scheduling, transportation, meals, safety equipment, and other operational commitments. Many of these costs are incurred or committed before the tour departure and cannot be recovered when a reservation is canceled."
-        data-es="Cada reserva confirmada requiere planificación anticipada y la asignación de recursos operativos. Estos pueden incluir cargos por procesamiento de pagos, comisiones de plataformas de reservas, gastos bancarios y de conversión de moneda, administración, programación de guías, transporte, alimentación, equipo de seguridad y otros compromisos operativos. Muchos de estos costos se generan o comprometen antes de la salida y no pueden recuperarse cuando se cancela una reserva.">
-        Every confirmed reservation requires advance planning and the allocation of operational resources. These may include payment processing fees, booking platform commissions, banking and currency conversion fees, administration, guide scheduling, transportation, meals, safety equipment, and other operational commitments. Many of these costs are incurred or committed before the tour departure and cannot be recovered when a reservation is canceled.
+      <p data-en="Reservations require advance planning and operational resources, including payment processing, commissions, administration, guide scheduling, transport, meals and safety equipment. Some costs are committed before departure and cannot be recovered after cancellation."
+         data-es="Las reservas requieren planificación y recursos operativos, incluidos procesamiento de pagos, comisiones, administración, programación de guías, transporte, alimentación y equipo de seguridad. Algunos costos se comprometen antes de la salida y no pueden recuperarse tras una cancelación.">
+        Reservations require advance planning and operational resources, including payment processing, commissions, administration, guide scheduling, transport, meals and safety equipment. Some costs are committed before departure and cannot be recovered after cancellation.
       </p>
 
-      <p
-        data-en="For cancellations received at least 24 hours before departure, a 15% processing fee is retained to partially offset these costs. Cancellations received less than 24 hours before departure are fully non-refundable because resources have already been committed to the reservation."
-        data-es="Para las cancelaciones recibidas con al menos 24 horas de anticipación, se retiene un 15% por procesamiento para compensar parcialmente estos costos. Las cancelaciones recibidas con menos de 24 horas de anticipación no son reembolsables, ya que los recursos se han comprometido para la reserva.">
-        For cancellations received at least 24 hours before departure, a 15% processing fee is retained to partially offset these costs. Cancellations received less than 24 hours before departure are fully non-refundable because resources have already been committed to the reservation.
+      <h3 data-en="3. Strict Time-Based Policy — No Exceptions" data-es="3. Política estricta basada en el tiempo — Sin excepciones">3. Strict Time-Based Policy — No Exceptions</h3>
+
+      <p data-en="Cancellations received less than 24 hours before departure are non-refundable and are not eligible for credits or rescheduling, regardless of the reason, subject to applicable mandatory legal rights."
+         data-es="Las cancelaciones recibidas con menos de 24 horas de anticipación no son reembolsables ni elegibles para créditos o cambios de fecha, independientemente del motivo y sujeto a los derechos legales obligatorios aplicables.">
+        Cancellations received less than 24 hours before departure are non-refundable and are not eligible for credits or rescheduling, regardless of the reason, subject to applicable mandatory legal rights.
       </p>
 
-      <h3 data-en="3. Strict Time-Based Policy — No Exceptions"
-          data-es="3. Política estricta basada en el tiempo — Sin excepciones">
-        3. Strict Time-Based Policy — No Exceptions
-      </h3>
-
-      <p
-        data-en="Our cancellation policy is strictly time-based. No exceptions, credits, refunds, rescheduling, or special considerations will be granted for cancellations received less than 24 hours before departure, regardless of the reason."
-        data-es="Nuestra política de cancelación se basa estrictamente en el tiempo de anticipación. No se otorgarán excepciones, créditos, reembolsos, cambios de fecha ni consideraciones especiales para cancelaciones recibidas con menos de 24 horas de anticipación, independientemente del motivo.">
-        Our cancellation policy is strictly time-based. No exceptions, credits, refunds, rescheduling, or special considerations will be granted for cancellations received less than 24 hours before departure, regardless of the reason.
+      <p data-en="This includes illness, medical emergencies, flight delays or cancellations, missed connections, traffic, road closures, transportation failures, weather affecting personal travel, family emergencies, work conflicts, passport or visa issues, hotel problems, lost or delayed baggage, cruise changes or other personal or travel-related circumstances."
+         data-es="Esto incluye enfermedades, emergencias médicas, retrasos o cancelaciones de vuelos, conexiones perdidas, tráfico, cierres de carreteras, fallas de transporte, clima que afecte el viaje personal, emergencias familiares, conflictos laborales, problemas de pasaporte o visa, inconvenientes con hoteles, equipaje perdido o retrasado, cambios de crucero u otras circunstancias personales o de viaje.">
+        This includes illness, medical emergencies, flight delays or cancellations, missed connections, traffic, road closures, transportation failures, weather affecting personal travel, family emergencies, work conflicts, passport or visa issues, hotel problems, lost or delayed baggage, cruise changes or other personal or travel-related circumstances.
       </p>
 
-      <p
-        data-en="This includes illness, medical emergencies, pregnancy-related complications, flight delays or cancellations, missed connections, airport disruptions, traffic, road closures, transportation failures, weather affecting personal travel, natural disasters affecting travel plans, family emergencies, bereavement, work conflicts, passport or visa issues, hotel problems, lost or delayed baggage, cruise itinerary changes, or any other personal or travel-related circumstance."
-        data-es="Esto incluye enfermedades, emergencias médicas, complicaciones relacionadas con el embarazo, retrasos o cancelaciones de vuelos, conexiones perdidas, interrupciones en aeropuertos, tráfico, cierres de carreteras, fallas de transporte, condiciones climáticas que afecten el viaje personal, desastres naturales que afecten los planes de viaje, emergencias familiares, fallecimientos, conflictos laborales, problemas con pasaportes o visas, inconvenientes con hoteles, equipaje perdido o retrasado, cambios en itinerarios de cruceros o cualquier otra circunstancia personal o relacionada con el viaje.">
-        This includes illness, medical emergencies, pregnancy-related complications, flight delays or cancellations, missed connections, airport disruptions, traffic, road closures, transportation failures, weather affecting personal travel, natural disasters affecting travel plans, family emergencies, bereavement, work conflicts, passport or visa issues, hotel problems, lost or delayed baggage, cruise itinerary changes, or any other personal or travel-related circumstance.
+      <p data-en="Guests must arrive at the designated meeting point at the specified check-in time. No-shows, late arrivals or travel disruptions do not exempt guests from this policy."
+         data-es="Los clientes deben llegar al punto de encuentro a la hora indicada. Las ausencias, llegadas tardías o interrupciones de viaje no eximen del cumplimiento de esta política.">
+        Guests must arrive at the designated meeting point at the specified check-in time. No-shows, late arrivals or travel disruptions do not exempt guests from this policy.
       </p>
 
-      <p
-        data-en="Guests are responsible for arriving at the designated meeting point at the specified check-in time. No-shows, late arrivals, difficulty locating the meeting point, or transportation and travel disruptions do not exempt guests from this policy."
-        data-es="Los clientes son responsables de llegar al punto de encuentro indicado a la hora establecida para el registro. Las ausencias, llegadas tardías, dificultades para encontrar el punto de encuentro o problemas de transporte y viaje no eximen del cumplimiento de esta política.">
-        Guests are responsible for arriving at the designated meeting point at the specified check-in time. No-shows, late arrivals, difficulty locating the meeting point, or transportation and travel disruptions do not exempt guests from this policy.
+      <h3 data-en="4. Refund Processing" data-es="4. Procesamiento de reembolsos">4. Refund Processing</h3>
+
+      <p data-en="Approved refunds are generally processed within seven (7) business days after review and approval. The time for funds to appear in an account varies by bank, card issuer or payment provider."
+         data-es="Los reembolsos aprobados generalmente se procesan dentro de los siete (7) días hábiles posteriores a la revisión y aprobación. El tiempo para que el dinero aparezca en la cuenta varía según el banco, emisor de tarjeta o proveedor de pagos.">
+        Approved refunds are generally processed within seven (7) business days after review and approval. The time for funds to appear in an account varies by bank, card issuer or payment provider.
       </p>
 
-      <h3 data-en="4. Refund Processing"
-          data-es="4. Procesamiento de reembolsos">
-        4. Refund Processing
-      </h3>
+      <h3 data-en="5. Acceptance of Terms" data-es="5. Aceptación de las condiciones">5. Acceptance of Terms</h3>
 
-      <p
-        data-en="Approved refunds are generally processed within seven (7) business days after the cancellation request has been reviewed and approved by Arenal Adventure Experiences. The time required for the funds to appear in the guest's account may vary depending on the bank, credit card issuer, payment processor, PayPal, digital wallet, or financial institution. These third-party posting times are outside our control."
-        data-es="Los reembolsos aprobados generalmente se procesan dentro de los siete (7) días hábiles posteriores a la revisión y aprobación de la solicitud por parte de Arenal Adventure Experiences. El tiempo que tarda el dinero en reflejarse en la cuenta puede variar según el banco, emisor de la tarjeta, procesador de pagos, PayPal, billetera digital u otra institución financiera. Estos plazos de acreditación de terceros están fuera de nuestro control.">
-        Approved refunds are generally processed within seven (7) business days after the cancellation request has been reviewed and approved by Arenal Adventure Experiences. The time required for the funds to appear in the guest's account may vary depending on the bank, credit card issuer, payment processor, PayPal, digital wallet, or financial institution. These third-party posting times are outside our control.
+      <p data-en="By completing a reservation, guests acknowledge that they have read and accepted this policy and applicable booking terms, subject to mandatory legal rights."
+         data-es="Al completar una reserva, los clientes reconocen que han leído y aceptado esta política y las condiciones aplicables, sujeto a los derechos legales obligatorios.">
+        By completing a reservation, guests acknowledge that they have read and accepted this policy and applicable booking terms, subject to mandatory legal rights.
       </p>
 
-      <h3 data-en="5. Acceptance of Terms"
-          data-es="5. Aceptación de las condiciones">
-        5. Acceptance of Terms
-      </h3>
+      <h3 data-en="6. Policy Administration" data-es="6. Administración de la política">6. Policy Administration</h3>
 
-      <p
-        data-en="By completing a reservation, guests acknowledge that they have read, understood, and accepted this Cancellation Policy and the applicable booking, refund, and participation terms. Cancellation eligibility is determined by the notice period before the scheduled departure time, not by the reason for cancellation. Completing a reservation constitutes acceptance of these conditions, subject to applicable mandatory legal rights."
-        data-es="Al completar una reserva, los clientes reconocen que han leído, comprendido y aceptado esta Política de Cancelación y las condiciones aplicables de reserva, reembolso y participación. La elegibilidad para un reembolso se determina por el tiempo de anticipación respecto a la salida programada, no por el motivo de la cancelación. Completar una reserva constituye la aceptación de estas condiciones, sin perjuicio de los derechos legales obligatorios aplicables.">
-        By completing a reservation, guests acknowledge that they have read, understood, and accepted this Cancellation Policy and the applicable booking, refund, and participation terms. Cancellation eligibility is determined by the notice period before the scheduled departure time, not by the reason for cancellation. Completing a reservation constitutes acceptance of these conditions, subject to applicable mandatory legal rights.
+      <p data-en="Arenal Adventure Experiences is responsible for establishing, communicating and applying the cancellation and refund policies stated on this website, subject to applicable mandatory legal requirements."
+         data-es="Arenal Adventure Experiences es responsable de establecer, comunicar y aplicar las políticas de cancelación y reembolso publicadas en este sitio, sujetas a los requisitos legales obligatorios aplicables.">
+        Arenal Adventure Experiences is responsible for establishing, communicating and applying the cancellation and refund policies stated on this website, subject to applicable mandatory legal requirements.
       </p>
 
-      <h3 data-en="6. Policy Administration"
-          data-es="6. Administración de la política">
-        6. Policy Administration
-      </h3>
-
-      <p
-        data-en="Arenal Adventure Experiences is responsible for establishing, communicating, and applying the cancellation and refund policies stated on this website and presented during the booking process. These policies apply to reservations made through Arenal Adventure Experiences, subject to applicable mandatory legal requirements."
-        data-es="Arenal Adventure Experiences es responsable de establecer, comunicar y aplicar las políticas de cancelación y reembolso publicadas en este sitio web y presentadas durante el proceso de reserva. Estas políticas se aplican a las reservas realizadas a través de Arenal Adventure Experiences, sujetas a los requisitos legales obligatorios aplicables.">
-        Arenal Adventure Experiences is responsible for establishing, communicating, and applying the cancellation and refund policies stated on this website and presented during the booking process. These policies apply to reservations made through Arenal Adventure Experiences, subject to applicable mandatory legal requirements.
-      </p>
     </div>
   </div>
 </section>
 
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <div>
+      <strong>ARENAL FORTUNA ADVENTURE EXPERIENCES</strong>
+      <p data-en="Explore La Fortuna, Costa Rica" data-es="Explora La Fortuna, Costa Rica">Explore La Fortuna, Costa Rica</p>
+      <p>© <span id="year"></span> Arenal Fortuna Adventure Experiences</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#tours" data-en="Experiences" data-es="Experiencias">Experiences</a>
+      <a href="#booking" data-en="Contact" data-es="Contacto">Contact</a>
+      <a href="#cancellation-policy" data-en="Cancellation Policy" data-es="Política de cancelación">Cancellation Policy</a>
+      <a href="https://wa.me/50672500633" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-float"
+   href="https://wa.me/50672500633"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Contact us on WhatsApp">WhatsApp</a>
+
+<script>
+const languageButtons = document.querySelectorAll("[data-language]");
+
+function setLanguage(language) {
+  document.documentElement.lang = language;
+
+  document.querySelectorAll("[data-en][data-es]").forEach(function(element) {
+    const translation = element.getAttribute("data-" + language);
+    if (translation !== null) {
+      element.textContent = translation;
+    }
+  });
+
+  languageButtons.forEach(function(button) {
+    const active = button.getAttribute("data-language") === language;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  });
+}
+
+languageButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    setLanguage(button.getAttribute("data-language"));
+  });
+});
+
+document.querySelectorAll("a[data-tour]").forEach(function(link) {
+  link.addEventListener("click", function() {
+    document.getElementById("activity").value = link.getAttribute("data-tour");
+  });
+});
+
+document.getElementById("bookingForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const data = new FormData(this);
+  const isSpanish = document.documentElement.lang === "es";
+
+  const labels = isSpanish
+    ? {
+        title: "Solicitud de información o reservación",
+        name: "Nombre",
+        email: "Correo electrónico",
+        activity: "Experiencia",
+        date: "Fecha preferida",
+        people: "Número de personas",
+        language: "Idioma preferido",
+        message: "Detalles adicionales"
+      }
+    : {
+        title: "Booking inquiry",
+        name: "Name",
+        email: "Email",
+        activity: "Experience",
+        date: "Preferred date",
+        people: "Number of people",
+        language: "Preferred language",
+        message: "Additional details"
+      };
+
+  let message = labels.title + "\n\n";
+
+  ["name", "email", "activity", "date", "people", "language", "message"].forEach(function(key) {
+    const value = (data.get(key) || "").toString().trim();
+
+    if (value) {
+      message += labels[key] + ": " + value + "\n";
+    }
+  });
+
+  const whatsappUrl =
+    "https://wa.me/50672500633?text=" + encodeURIComponent(message);
+
+  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const dateInput = document.getElementById("date");
+const today = new Date();
+
+dateInput.min = new Date(
+  today.getTime() - today.getTimezoneOffset() * 60000
+).toISOString().split("T")[0];
+</script>
+
+</body>
+</html>
